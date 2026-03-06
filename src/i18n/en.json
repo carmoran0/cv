@@ -153,7 +153,8 @@
       }
     },
     "tags": {
-      "universidad": "University"
+      "universidad": "University",
+      "politica": "Politics"
     }
   },
   "contact": {
@@ -162,5 +163,67 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "preferred": "Preferred contact: email or LinkedIn DM."
+  },
+  "certifications": {
+    "title": "Certifications",
+    "viewCredential": "View credential",
+    "comingSoon": "Coming soon",
+    "items": {
+      "mongodb_relational_model": {
+        "title": "From Relational Model (SQL) to MongoDB's Document Model",
+        "issuer": "MongoDB",
+        "date": "2025"
+      },
+      "microsoft_dp900": {
+        "title": "Microsoft Azure Data Fundamentals (DP-900)",
+        "issuer": "Microsoft",
+        "date": "Coming soon"
+      },
+      "microsoft_az900": {
+        "title": "Microsoft Azure Fundamentals (AZ-900)",
+        "issuer": "Microsoft",
+        "date": "Coming soon"
+      },
+      "ms_overview_data_analysis": {
+        "title": "Get started with data analytics on Azure",
+        "issuer": "Microsoft Learn",
+        "date": "2025"
+      },
+      "ms_data_preparation": {
+        "title": "Prepare data for analysis with Power BI",
+        "issuer": "Microsoft Learn",
+        "date": "2025"
+      },
+      "ms_model_data": {
+        "title": "Model data in Power BI",
+        "issuer": "Microsoft Learn",
+        "date": "2025"
+      },
+      "ms_power_bi_effective": {
+        "title": "Build effective reports in Power BI",
+        "issuer": "Microsoft Learn",
+        "date": "2025"
+      },
+      "ms_use_dax": {
+        "title": "Use DAX in Power BI Desktop",
+        "issuer": "Microsoft Learn",
+        "date": "2025"
+      },
+      "ms_transact_sql": {
+        "title": "Get Started Querying with Transact-SQL",
+        "issuer": "Microsoft Learn",
+        "date": "2025"
+      },
+      "aws_cloud_foundations": {
+        "title": "AWS Cloud Foundations",
+        "issuer": "Amazon Web Services",
+        "date": "Coming soon"
+      },
+      "mongodb_python_path": {
+        "title": "MongoDB Python Developer Path",
+        "issuer": "MongoDB",
+        "date": "Coming soon"
+      }
+    }
   }
 }

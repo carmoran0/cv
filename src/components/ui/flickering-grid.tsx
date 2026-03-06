@@ -3,7 +3,6 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
 } from "react";
 
 interface FlickeringGridProps {
@@ -14,7 +13,6 @@ interface FlickeringGridProps {
   width?: number;
   height?: number;
   className?: string;
-
   maxOpacity?: number;
 }
 
@@ -30,8 +28,8 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-  const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+  const isInViewRef = useRef(false);
+  const animationFrameRef = useRef<number>(0);
 
   const memoizedColor = useMemo(() => {
     const toRGBA = (color: string) => {
@@ -51,14 +49,14 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   }, [color]);
 
   const setupCanvas = useCallback(
-    (canvas: HTMLCanvasElement, width: number, height: number) => {
+    (canvas: HTMLCanvasElement, w: number, h: number) => {
       const dpr = window.devicePixelRatio || 1;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      const cols = Math.floor(width / (squareSize + gridGap));
-      const rows = Math.floor(height / (squareSize + gridGap));
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      const cols = Math.floor(w / (squareSize + gridGap));
+      const rows = Math.floor(h / (squareSize + gridGap));
 
       const squares = new Float32Array(cols * rows);
       for (let i = 0; i < squares.length; i++) {
@@ -84,17 +82,14 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   const drawGrid = useCallback(
     (
       ctx: CanvasRenderingContext2D,
-      width: number,
-      height: number,
+      w: number,
+      h: number,
       cols: number,
       rows: number,
       squares: Float32Array,
       dpr: number,
     ) => {
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "transparent";
-      ctx.fillRect(0, 0, width, height);
-
+      ctx.clearRect(0, 0, w, h);
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           const opacity = squares[i * rows + j];
@@ -119,13 +114,11 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationFrameId: number;
     let gridParams: ReturnType<typeof setupCanvas>;
 
     const updateCanvasSize = () => {
       const newWidth = width || container.clientWidth;
       const newHeight = height || container.clientHeight;
-      setCanvasSize({ width: newWidth, height: newHeight });
       gridParams = setupCanvas(canvas, newWidth, newHeight);
     };
 
@@ -133,7 +126,10 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
     let lastTime = 0;
     const animate = (time: number) => {
-      if (!isInView) return;
+      if (!isInViewRef.current) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
 
       const deltaTime = (time - lastTime) / 1000;
       lastTime = time;
@@ -148,7 +144,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         gridParams.squares,
         gridParams.dpr,
       );
-      animationFrameId = requestAnimationFrame(animate);
+      animationFrameRef.current = requestAnimationFrame(animate);
     };
 
     const resizeObserver = new ResizeObserver(() => {
@@ -159,36 +155,33 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
     const intersectionObserver = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        isInViewRef.current = entry.isIntersecting;
       },
       { threshold: 0 },
     );
 
     intersectionObserver.observe(canvas);
 
-    if (isInView) {
-      animationFrameId = requestAnimationFrame(animate);
-    }
+    animationFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animationFrameRef.current);
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
     };
-  }, [setupCanvas, updateSquares, drawGrid, width, height, isInView]);
+  // Run only once on mount — all dependencies are stable refs/callbacks
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div ref={containerRef} className={`w-full h-full ${className}`}>
       <canvas
         ref={canvasRef}
         className="pointer-events-none"
-        style={{
-          width: canvasSize.width,
-          height: canvasSize.height,
-        }}
       />
     </div>
   );
 };
 
-export { FlickeringGrid };
+const MemoizedFlickeringGrid = React.memo(FlickeringGrid);
+export { MemoizedFlickeringGrid as FlickeringGrid };

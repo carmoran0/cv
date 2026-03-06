@@ -3,14 +3,6 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMode } from "../../context/ModeContext";
 
-const navItems = [
-  { id: "overview", labelKey: "sidebar.overview" },
-  { id: "evidence", labelKey: "sidebar.evidence" },
-  { id: "skills", labelKey: "sidebar.skills" },
-  { id: "about", labelKey: "sidebar.about" },
-  { id: "contact", labelKey: "sidebar.contact" },
-];
-
 const TopBar: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { mode, toggleMode } = useMode();
@@ -19,11 +11,6 @@ const TopBar: React.FC = () => {
 
   const switchLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
-  };
-
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -56,19 +43,6 @@ const TopBar: React.FC = () => {
           EN
         </button>
       </div>
-
-      {/* Center: Section navigation (desktop) */}
-      <nav className="hidden md:flex items-center gap-1">
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => scrollTo(item.id)}
-            className="px-3 py-1.5 rounded-md text-xs font-medium text-text-secondary hover:text-text-primary hover:bg-white/[0.05] transition-all duration-200"
-          >
-            {t(item.labelKey)}
-          </button>
-        ))}
-      </nav>
 
       {/* Right: Mode Toggle + CTA */}
       <div className="flex items-center gap-3">

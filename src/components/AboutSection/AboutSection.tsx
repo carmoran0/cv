@@ -9,19 +9,6 @@ const AboutSection: React.FC = () => {
 
   return (
     <div className="max-w-2xl">
-      <AnimatePresence mode="wait">
-        <motion.h2
-          key={`about-title-${i18n.language}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.15 }}
-          className="text-xs font-sans font-semibold tracking-widest text-text-secondary uppercase mb-4"
-        >
-          {t("about.title")}
-        </motion.h2>
-      </AnimatePresence>
-
       <div className="p-6 rounded-xl bg-surface border border-border">
         <AnimatePresence mode="wait">
           <motion.p

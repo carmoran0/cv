@@ -53,3 +53,14 @@ export interface ExperienceItem {
   /** Sort order: higher = more recent (used for timeline ordering) */
   sortDate: number;
 }
+
+export interface CertificationItem {
+  id: string;
+  titleKey: string;
+  issuerKey: string;
+  dateKey: string;
+  badgeUrl?: string;
+  credentialUrl?: string;
+  imageSrc?: string;
+  comingSoon?: boolean;
+}
