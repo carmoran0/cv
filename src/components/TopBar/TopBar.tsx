@@ -115,24 +115,7 @@ const TopBar: React.FC = () => {
           </button>
         </div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => scrollTo("contact")}
-          className="hidden sm:block px-4 py-1.5 rounded-lg bg-accent-green/10 border border-accent-green/30 text-accent-green text-xs font-semibold hover:bg-accent-green/20 transition-colors"
-        >
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={`cta-${i18n.language}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              {t("topbar.available")}
-            </motion.span>
-          </AnimatePresence>
-        </motion.button>
+        {/* 'Available for internships' CTA removed per request */}
       </div>
     </motion.header>
   );

@@ -1,124 +1,14 @@
 import { KPIItem, EvidenceItem, SkillItem, ArchitectureNode, SignalItem, ExperienceItem } from "../types";
 
-export const kpiItems: KPIItem[] = [
-  { id: "status", labelKey: "kpi.status", valueKey: "kpi.available", type: "status" },
-  { id: "focus", labelKey: "kpi.focus", valueKey: "kpi.focusValue", type: "info" },
-  { id: "side", labelKey: "kpi.side", valueKey: "kpi.sideValue", type: "info" },
-  { id: "location", labelKey: "kpi.location", valueKey: "kpi.locationValue", type: "info" },
-  { id: "languages", labelKey: "kpi.languages", valueKey: "kpi.languagesValue", type: "info" },
-];
+export const kpiItems: KPIItem[] = [];
 
-export const architectureNodes: ArchitectureNode[] = [
-  { id: "sources", labelKey: "architecture.sources", toolsKey: "architecture.sourcesTools" },
-  { id: "ingest", labelKey: "architecture.ingest", toolsKey: "architecture.ingestTools" },
-  { id: "transform", labelKey: "architecture.transform", toolsKey: "architecture.transformTools" },
-  { id: "store", labelKey: "architecture.store", toolsKey: "architecture.storeTools" },
-  { id: "serve", labelKey: "architecture.serve", toolsKey: "architecture.serveTools" },
-  { id: "visualize", labelKey: "architecture.visualize", toolsKey: "architecture.visualizeTools" },
-];
+export const architectureNodes: ArchitectureNode[] = [];
 
-export const signalItems: SignalItem[] = [
-  { id: "degree", textKey: "signals.degree", icon: "" },
-  { id: "oxford", textKey: "signals.oxford", icon: "" },
-  { id: "mongodb", textKey: "signals.mongodb", icon: "" },
-  { id: "microsoft", textKey: "signals.microsoft", icon: "" },
-  { id: "fiverr", textKey: "signals.fiverr", icon: "" },
-  { id: "learning", textKey: "signals.learning", icon: "" },
-];
+export const signalItems: SignalItem[] = [];
 
-export const evidenceItems: EvidenceItem[] = [
-  {
-    id: "etl_pipeline",
-    icon: "",
-    titleKey: "evidence.items.etl_pipeline.title",
-    goalKey: "evidence.items.etl_pipeline.goal",
-    learnedKey: "evidence.items.etl_pipeline.learned",
-    stackKey: "evidence.items.etl_pipeline.stack",
-    skills: ["sql", "python", "etl"],
-    isUniversity: true,
-  },
-  {
-    id: "dashboard_bi",
-    icon: "",
-    titleKey: "evidence.items.dashboard_bi.title",
-    goalKey: "evidence.items.dashboard_bi.goal",
-    learnedKey: "evidence.items.dashboard_bi.learned",
-    stackKey: "evidence.items.dashboard_bi.stack",
-    skills: ["sql", "dashboards"],
-    isUniversity: true,
-  },
-  {
-    id: "nosql_migration",
-    icon: "",
-    titleKey: "evidence.items.nosql_migration.title",
-    goalKey: "evidence.items.nosql_migration.goal",
-    learnedKey: "evidence.items.nosql_migration.learned",
-    stackKey: "evidence.items.nosql_migration.stack",
-    skills: ["nosql", "sql", "python"],
-    isUniversity: true,
-  },
-  {
-    id: "api_rest",
-    icon: "",
-    titleKey: "evidence.items.api_rest.title",
-    goalKey: "evidence.items.api_rest.goal",
-    learnedKey: "evidence.items.api_rest.learned",
-    stackKey: "evidence.items.api_rest.stack",
-    skills: ["apis", "sql"],
-    isUniversity: true,
-  },
-  {
-    id: "data_viz",
-    icon: "",
-    titleKey: "evidence.items.data_viz.title",
-    goalKey: "evidence.items.data_viz.goal",
-    learnedKey: "evidence.items.data_viz.learned",
-    stackKey: "evidence.items.data_viz.stack",
-    skills: ["python", "dashboards"],
-    isUniversity: true,
-  },
-  {
-    id: "web_scraping",
-    icon: "",
-    titleKey: "evidence.items.web_scraping.title",
-    goalKey: "evidence.items.web_scraping.goal",
-    learnedKey: "evidence.items.web_scraping.learned",
-    stackKey: "evidence.items.web_scraping.stack",
-    skills: ["python", "sql"],
-    isUniversity: true,
-  },
-  {
-    id: "oxford_cert",
-    icon: "",
-    titleKey: "evidence.items.oxford_cert.title",
-    goalKey: "evidence.items.oxford_cert.goal",
-    learnedKey: "evidence.items.oxford_cert.learned",
-    stackKey: "evidence.items.oxford_cert.stack",
-    skills: [],
-    isUniversity: false,
-  },
-  {
-    id: "fiverr_design",
-    icon: "",
-    titleKey: "evidence.items.fiverr_design.title",
-    goalKey: "evidence.items.fiverr_design.goal",
-    learnedKey: "evidence.items.fiverr_design.learned",
-    stackKey: "evidence.items.fiverr_design.stack",
-    skills: ["design"],
-    isUniversity: false,
-  },
-];
+export const evidenceItems: EvidenceItem[] = [];
 
-export const skillItems: SkillItem[] = [
-  { id: "sql", labelKey: "skills.items.sql.label", noteKey: "skills.items.sql.note", relatedEvidence: ["etl_pipeline", "dashboard_bi", "nosql_migration", "api_rest", "web_scraping"] },
-  { id: "nosql", labelKey: "skills.items.nosql.label", noteKey: "skills.items.nosql.note", relatedEvidence: ["nosql_migration"] },
-  { id: "etl", labelKey: "skills.items.etl.label", noteKey: "skills.items.etl.note", relatedEvidence: ["etl_pipeline"] },
-  { id: "dashboards", labelKey: "skills.items.dashboards.label", noteKey: "skills.items.dashboards.note", relatedEvidence: ["dashboard_bi", "data_viz"] },
-  { id: "apis", labelKey: "skills.items.apis.label", noteKey: "skills.items.apis.note", relatedEvidence: ["api_rest"] },
-  { id: "python", labelKey: "skills.items.python.label", noteKey: "skills.items.python.note", relatedEvidence: ["etl_pipeline", "nosql_migration", "data_viz", "web_scraping"] },
-  { id: "design", labelKey: "skills.items.design.label", noteKey: "skills.items.design.note", relatedEvidence: ["fiverr_design"] },
-  { id: "docker", labelKey: "skills.items.docker.label", noteKey: "skills.items.docker.note", relatedEvidence: [] },
-];
+export const skillItems: SkillItem[] = [];
 
 export const contactData = {
   email: "carmoran05@proton.me",
@@ -130,47 +20,43 @@ export const contactData = {
 
 export const experienceItems: ExperienceItem[] = [
   {
+    id: "unita_comision",
+    icon: "⚖️",
+    organizationKey: "experience.items.unita_comision.organization",
+    roleKey: "experience.items.unita_comision.role",
+    periodKey: "experience.items.unita_comision.period",
+    descriptionKey: "experience.items.unita_comision.description",
+    tags: ["politica"],
+    sortDate: 20260101,
+  },
+  {
+    id: "unita_cabeza",
+    icon: "🗳️",
+    organizationKey: "experience.items.unita_cabeza.organization",
+    roleKey: "experience.items.unita_cabeza.role",
+    periodKey: "experience.items.unita_cabeza.period",
+    descriptionKey: "experience.items.unita_cabeza.description",
+    tags: ["politica"],
+    sortDate: 20250301,
+  },
+  {
     id: "unizar",
-    icon: "",
-    logoUrl: "https://media.licdn.com/dms/image/v2/D4D0BAQHQ7N5d2HkzHg/company-logo_100_100/B4DZfKwKfKH4AU-/0/1751453313846/universidad_de_zaragoza_logo?e=1774483200&v=beta&t=bBV-seTVAGe2TG8JEWt2yYWHCL5YXRlj1_hJHPGWzWQ",
+    icon: "🎓",
     organizationKey: "experience.items.unizar.organization",
     roleKey: "experience.items.unizar.role",
     periodKey: "experience.items.unizar.period",
     tags: ["universidad"],
-    sortDate: 202300,
+    sortDate: 20230901,
   },
   {
     id: "fiverr",
-    icon: "",
-    logoUrl: "https://media.licdn.com/dms/image/v2/D4D0BAQFP29TmS5PQeQ/company-logo_100_100/B4DZieWv6LHYAU-/0/1755003421024/fiverr_com_logo?e=1774483200&v=beta&t=eeMeQcNNJHCiT5Qs2dtCiG4CT7QHEqmGHEB3e9l3Uvw",
+    icon: "🎨",
     organizationKey: "experience.items.fiverr.organization",
     roleKey: "experience.items.fiverr.role",
     periodKey: "experience.items.fiverr.period",
     locationKey: "experience.items.fiverr.location",
     descriptionKey: "experience.items.fiverr.description",
     tags: [],
-    sortDate: 202006,
-  },
-  {
-    id: "unita_cabeza",
-    icon: "",
-    logoUrl: "https://media.licdn.com/dms/image/v2/C4E0BAQHcRZEoa6tLtA/company-logo_100_100/company-logo_100_100/0/1630638546396/universitasmontium_logo?e=1774483200&v=beta&t=rBKLZRkebeKjt-a5JdtzVoSEw90-jKf0YI7ll-es_V8",
-    organizationKey: "experience.items.unita_cabeza.organization",
-    roleKey: "experience.items.unita_cabeza.role",
-    periodKey: "experience.items.unita_cabeza.period",
-    descriptionKey: "experience.items.unita_cabeza.description",
-    tags: ["universidad"],
-    sortDate: 202503,
-  },
-  {
-    id: "unita_comision",
-    icon: "",
-    logoUrl: "https://media.licdn.com/dms/image/v2/C4E0BAQHcRZEoa6tLtA/company-logo_100_100/company-logo_100_100/0/1630638546396/universitasmontium_logo?e=1774483200&v=beta&t=rBKLZRkebeKjt-a5JdtzVoSEw90-jKf0YI7ll-es_V8",
-    organizationKey: "experience.items.unita_comision.organization",
-    roleKey: "experience.items.unita_comision.role",
-    periodKey: "experience.items.unita_comision.period",
-    descriptionKey: "experience.items.unita_comision.description",
-    tags: ["universidad"],
-    sortDate: 202601,
+    sortDate: 20200601,
   },
 ];

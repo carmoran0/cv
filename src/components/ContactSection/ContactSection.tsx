@@ -12,7 +12,7 @@ const ContactSection: React.FC = () => {
       label: t("contact.email"),
       value: contactData.email,
       href: `mailto:${contactData.email}`,
-      icon: "",
+      icon: "✉️",
     },
     {
       id: "linkedin",
@@ -26,7 +26,7 @@ const ContactSection: React.FC = () => {
       label: t("contact.github"),
       value: contactData.githubLabel,
       href: contactData.github,
-      icon: "⌘",
+      icon: "🐙",
     },
   ];
 
@@ -84,6 +84,7 @@ const ContactSection: React.FC = () => {
           {t("contact.preferred")}
         </motion.p>
       </AnimatePresence>
+
     </div>
   );
 };

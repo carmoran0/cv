@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "../../types";
 import { kpiItems } from "../../data/cv";
 import KPICard from "../KPICard/KPICard";
-import ArchitectureDiagram from "../ArchitectureDiagram/ArchitectureDiagram";
 import SignalsRow from "../SignalsRow/SignalsRow";
 import EvidenceGrid from "../EvidenceGrid/EvidenceGrid";
 import SkillsFilter from "../SkillsFilter/SkillsFilter";
@@ -39,9 +38,6 @@ const DrillDownPanel: React.FC<DrillDownPanelProps> = ({
                   <KPICard key={item.id} item={item} index={idx} />
                 ))}
               </div>
-
-              {/* Architecture diagram */}
-              <ArchitectureDiagram />
 
               {/* Signals row */}
               <SignalsRow />

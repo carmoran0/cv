@@ -3,13 +3,11 @@ import { ModeProvider } from "./context/ModeContext";
 import TopBar from "./components/TopBar/TopBar";
 import HeroSection from "./components/HeroSection/HeroSection";
 import KPICard from "./components/KPICard/KPICard";
-import ArchitectureDiagram from "./components/ArchitectureDiagram/ArchitectureDiagram";
 import SignalsRow from "./components/SignalsRow/SignalsRow";
 import EvidenceGrid from "./components/EvidenceGrid/EvidenceGrid";
 import SkillsFilter from "./components/SkillsFilter/SkillsFilter";
 import AboutSection from "./components/AboutSection/AboutSection";
 import ContactSection from "./components/ContactSection/ContactSection";
-import ExperienceTimeline from "./components/ExperienceTimeline/ExperienceTimeline";
 import { FlickeringGrid } from "./components/ui/flickering-grid";
 import { kpiItems } from "./data/cv";
 import { useTranslation } from "react-i18next";
@@ -54,7 +52,6 @@ function App() {
                   <KPICard key={item.id} item={item} index={idx} />
                 ))}
               </div>
-              <ArchitectureDiagram />
               <div className="mt-8">
                 <SignalsRow />
               </div>
@@ -78,11 +75,7 @@ function App() {
               </div>
             </section>
 
-            {/* Experience */}
-            <section id="experience" className="px-4 md:px-8 lg:px-16 py-12">
-              <SectionHeading titleKey="experience.title" />
-              <ExperienceTimeline />
-            </section>
+            {/* Experience section removed */}
 
             {/* About */}
             <section id="about" className="px-4 md:px-8 lg:px-16 py-12">
