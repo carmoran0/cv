@@ -1,0 +1,166 @@
+{
+  "hero": {
+    "subtitle": "Data Engineering student · Unizar"
+  },
+  "topbar": {
+    "available": "Available for internships →",
+    "recruiter": "Recruiter",
+    "technical": "Technical"
+  },
+  "sidebar": {
+    "overview": "Overview",
+    "evidence": "Evidence",
+    "skills": "Skills",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "kpi": {
+    "status": "STATUS",
+    "available": "AVAILABLE",
+    "focus": "FOCUS",
+    "focusValue": "Data Engineering · BI",
+    "side": "SIDE",
+    "sideValue": "Full-stack · Design",
+    "location": "LOCATION",
+    "locationValue": "Zaragoza / Remote",
+    "languages": "LANGUAGES",
+    "languagesValue": "EN (C1+) · ES (Native) · DE (A1)"
+  },
+  "architecture": {
+    "title": "Data Pipeline Architecture",
+    "sources": "Sources",
+    "sourcesTools": "APIs, CSV, DBs",
+    "ingest": "Ingest",
+    "ingestTools": "Python, Kafka",
+    "transform": "Transform",
+    "transformTools": "SQL, dbt, Pandas",
+    "store": "Store",
+    "storeTools": "PostgreSQL, MongoDB",
+    "serve": "Serve",
+    "serveTools": "REST APIs, GraphQL",
+    "visualize": "Visualize",
+    "visualizeTools": "Dashboards, Reports"
+  },
+  "signals": {
+    "degree": "Data Engineering Degree — Univ. Zaragoza (2023–2027)",
+    "oxford": "Oxford Test of English — C1",
+    "mongodb": "SQL → MongoDB Migration — MongoDB Cert",
+    "microsoft": "Microsoft Learn — Data Engineering Paths",
+    "fiverr": "Fiverr — Graphic Designer (2020–2022)",
+    "learning": "Now learning: Full-stack Development"
+  },
+  "evidence": {
+    "title": "Evidence",
+    "goal": "Goal",
+    "learned": "Learned",
+    "stack": "Stack",
+    "university": "University project",
+    "items": {
+      "etl_pipeline": {
+        "title": "ETL Pipeline — Sales Data",
+        "goal": "Build an automated pipeline to extract, transform and load sales data into a warehouse.",
+        "learned": "Data pipeline architecture, error handling and scheduling basics.",
+        "stack": "Python, SQL, PostgreSQL, Cron"
+      },
+      "dashboard_bi": {
+        "title": "BI Dashboard — KPI Monitoring",
+        "goal": "Create an interactive dashboard to monitor business KPIs in real time.",
+        "learned": "Dashboard design principles and KPI definition methodology.",
+        "stack": "SQL, Power BI, DAX"
+      },
+      "nosql_migration": {
+        "title": "SQL → MongoDB Migration",
+        "goal": "Migrate a relational database to a document-based model.",
+        "learned": "NoSQL data modeling, denormalization trade-offs.",
+        "stack": "MongoDB, Python, SQL"
+      },
+      "api_rest": {
+        "title": "REST API — Student Portal",
+        "goal": "Design and deploy a RESTful API for a university student portal.",
+        "learned": "API design, authentication patterns and documentation.",
+        "stack": "Node.js, Express, PostgreSQL"
+      },
+      "data_viz": {
+        "title": "Data Visualization — Climate Data",
+        "goal": "Visualize climate datasets to identify trends and anomalies.",
+        "learned": "Storytelling with data, chart selection and color design.",
+        "stack": "Python, Matplotlib, Pandas"
+      },
+      "web_scraping": {
+        "title": "Web Scraping — Price Tracker",
+        "goal": "Automate product price collection from e-commerce sites.",
+        "learned": "Web scraping techniques, scheduling and data storage.",
+        "stack": "Python, BeautifulSoup, SQLite"
+      },
+      "oxford_cert": {
+        "title": "Oxford Test of English",
+        "goal": "Certify C1+ English proficiency for professional environments.",
+        "learned": "Academic and professional English communication.",
+        "stack": ""
+      },
+      "fiverr_design": {
+        "title": "Freelance Graphic Design — Fiverr",
+        "goal": "Deliver professional graphic design services to international clients.",
+        "learned": "Client communication, feedback iteration, visual composition.",
+        "stack": "Photoshop, Illustrator, Figma"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "items": {
+      "sql": { "label": "SQL", "note": "PostgreSQL, complex queries, window functions, optimization" },
+      "nosql": { "label": "NoSQL / MongoDB", "note": "Document modeling, aggregation pipelines, Atlas" },
+      "etl": { "label": "ETL/ELT", "note": "Pipeline design, data quality, scheduling, error handling" },
+      "dashboards": { "label": "Dashboards", "note": "Power BI, KPI design, interactive reporting" },
+      "apis": { "label": "APIs", "note": "REST design, Express/Node.js, authentication, docs" },
+      "python": { "label": "Python", "note": "Pandas, scripting, data processing, automation" },
+      "design": { "label": "UI / Design", "note": "Figma, Photoshop, Illustrator — 2 years freelance" },
+      "docker": { "label": "Docker (learning)", "note": "Containers, docker-compose, dev environments" }
+    }
+  },
+  "about": {
+    "title": "About",
+    "recruiter": "Hi, I'm Carlos — Data Engineering & BI student at Universidad de Zaragoza (3rd year). I build pipelines, models and dashboards that turn data into decisions. I also bring a design background from 2 years as a freelance graphic designer. Looking for an internship where I can contribute and grow fast.",
+    "technical": "3rd year Data Engineering student (Univ. Zaragoza, 2023–2027). Interested in DE pipelines (ingestion, transformation, storage, orchestration) and BI layers (modeling, metrics, dashboards). Background in graphic design (Fiverr, 2020–2022) — useful for data viz and communication. Comfortable with SQL and NoSQL (MongoDB). Currently expanding full-stack skills. Not focused on Data Science / model training."
+  },
+  "experience": {
+    "title": "Experience",
+    "items": {
+      "unizar": {
+        "organization": "Universidad de Zaragoza",
+        "role": "Engineering Degree, Data Engineering in Industrial Processes",
+        "period": "2023 – 2027"
+      },
+      "fiverr": {
+        "organization": "Fiverr · Freelance",
+        "role": "Graphic Designer",
+        "period": "Jun 2020 – Apr 2022 · 1 year 11 months",
+        "location": "Remote",
+        "description": "During summers and in my free time, I worked as a freelance graphic designer on Fiverr, developing custom commissions for clients worldwide. I had the opportunity to create diverse visual material, adapting to each client's needs. This experience not only allowed me to refine my skills in design software tools, but also to learn how to manage projects from start to finish and work with very different clients. Thanks to this stage, I've been able to apply my creativity and taste for design to the tech world, especially adding value in projects where data, technology and visual communication intersect."
+      },
+      "unita_cabeza": {
+        "organization": "UNITA – Universitas Montium",
+        "role": "Head of List",
+        "period": "Mar 2025 – Jan 2026 · 11 months",
+        "description": "I was responsible for presenting the \"Veritas\" candidacy list in the 2025 UNITA elections."
+      },
+      "unita_comision": {
+        "organization": "UNITA – Universitas Montium",
+        "role": "Electoral Commission Member",
+        "period": "Jan 2026 – Feb 2026 · 2 months",
+        "description": "I stepped down from the \"Veritas\" list to serve as a member of the electoral commission for the UNITA elections at Unizar."
+      }
+    },
+    "tags": {
+      "universidad": "University"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "preferred": "Preferred contact: email or LinkedIn DM."
+  }
+}
