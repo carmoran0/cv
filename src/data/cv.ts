@@ -19,7 +19,7 @@ import imgModelData from "../images/model-data-power-bi.svg";
 import imgPowerBiEffective from "../images/power-bi-effective.svg";
 import imgUseDax from "../images/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.svg";
 import imgTransactSql from "../images/get-started-querying-with-transact-sql.svg";
-import imgMongoRelational from "../images/from-relational-model-sql-to-mongodb-s-document-mod.png";
+import imgMongoRelational from "../images/from-relational-model-sql-to-mongodb-s-document-mod-96.webp";
 import imgGenericTrophy from "../images/generic-trophy.svg";
 
 export const kpiItems: KPIItem[] = [];

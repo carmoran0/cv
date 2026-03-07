@@ -10,7 +10,7 @@ import CertificationsSection from "./components/CertificationsSection/Certificat
 import { FlickeringGrid } from "./components/ui/flickering-grid";
 import { LocationTag } from "./components/ui/LocationTag";
 import { useTranslation } from "react-i18next";
-import profileImg from "./images/profile.gif";
+import profileImg from "./images/profile.webp";
 
 function App() {
   return (
