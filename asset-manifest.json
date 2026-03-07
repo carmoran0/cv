@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cv/static/css/main.2c81f7da.css",
+    "main.css": "/cv/static/css/main.e29d01ed.css",
     "main.js": "/cv/static/js/main.85b42b41.js",
     "static/js/453.f2dee870.chunk.js": "/cv/static/js/453.f2dee870.chunk.js",
     "static/media/DiamondGrotesk-VF.ttf": "/cv/static/media/DiamondGrotesk-VF.9a4b8104aa3e0ef02faa.ttf",
@@ -14,12 +14,12 @@
     "static/media/power-bi-effective.svg": "/cv/static/media/power-bi-effective.20c77bf849b4750c0a6b1e2765bc42fb.svg",
     "static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.webp": "/cv/static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.4f86959905c819b50a08.webp",
     "index.html": "/cv/index.html",
-    "main.2c81f7da.css.map": "/cv/static/css/main.2c81f7da.css.map",
+    "main.e29d01ed.css.map": "/cv/static/css/main.e29d01ed.css.map",
     "main.85b42b41.js.map": "/cv/static/js/main.85b42b41.js.map",
     "453.f2dee870.chunk.js.map": "/cv/static/js/453.f2dee870.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c81f7da.css",
+    "static/css/main.e29d01ed.css",
     "static/js/main.85b42b41.js"
   ]
 }
