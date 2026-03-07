@@ -1,4 +1,13 @@
-import { KPIItem, EvidenceItem, SkillItem, ArchitectureNode, SignalItem, ExperienceItem, CertificationItem } from "../types";
+import {
+  KPIItem,
+  EvidenceItem,
+  SkillItem,
+  ArchitectureNode,
+  SignalItem,
+  ExperienceItem,
+  CertificationItem,
+  ProjectItem,
+} from "../types";
 
 import unitaLogo from "../universitasmontium_logo.jpg";
 import unizarLogo from "../universidad_de_zaragoza_logo.jpg";
@@ -11,6 +20,7 @@ import imgPowerBiEffective from "../images/power-bi-effective.svg";
 import imgUseDax from "../images/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.svg";
 import imgTransactSql from "../images/get-started-querying-with-transact-sql.svg";
 import imgMongoRelational from "../images/from-relational-model-sql-to-mongodb-s-document-mod.png";
+import imgGenericTrophy from "../images/generic-trophy.svg";
 
 export const kpiItems: KPIItem[] = [];
 
@@ -77,6 +87,51 @@ export const experienceItems: ExperienceItem[] = [
   },
 ];
 
+export const projectItems: ProjectItem[] = [
+  {
+    id: "microsystems_programming",
+    titleKey: "projects.items.microsystems_programming.title",
+    descriptionKey: "projects.items.microsystems_programming.description",
+    tags: ["UNIVERSIDAD"],
+  },
+  {
+    id: "sensor_cloud_discord",
+    titleKey: "projects.items.sensor_cloud_discord.title",
+    descriptionKey: "projects.items.sensor_cloud_discord.description",
+    tags: ["UNIVERSIDAD"],
+  },
+  {
+    id: "power_bi_visuals",
+    titleKey: "projects.items.power_bi_visuals.title",
+    descriptionKey: "projects.items.power_bi_visuals.description",
+    tags: ["UNIVERSIDAD"],
+  },
+  {
+    id: "home_media_server",
+    titleKey: "projects.items.home_media_server.title",
+    descriptionKey: "projects.items.home_media_server.description",
+    tags: ["TIEMPO LIBRE"],
+  },
+  {
+    id: "cv_website",
+    titleKey: "projects.items.cv_website.title",
+    descriptionKey: "projects.items.cv_website.description",
+    tags: ["TIEMPO LIBRE"],
+  },
+  {
+    id: "personal_website",
+    titleKey: "projects.items.personal_website.title",
+    descriptionKey: "projects.items.personal_website.description",
+    tags: ["TIEMPO LIBRE"],
+  },
+  {
+    id: "firefox_extension",
+    titleKey: "projects.items.firefox_extension.title",
+    descriptionKey: "projects.items.firefox_extension.description",
+    tags: ["TIEMPO LIBRE"],
+  },
+];
+
 export const certificationItems: CertificationItem[] = [
   {
     id: "mongodb_relational_model",
@@ -88,20 +143,12 @@ export const certificationItems: CertificationItem[] = [
     credentialUrl: "https://www.credly.com/badges/f6816c0e-8811-4f0e-a0ce-6274d9f900dd",
   },
   {
-    id: "mongodb_python_path",
-    titleKey: "certifications.items.mongodb_python_path.title",
-    issuerKey: "certifications.items.mongodb_python_path.issuer",
-    dateKey: "certifications.items.mongodb_python_path.date",
-    comingSoon: true,
-    credentialUrl: "",
-  },
-  {
     id: "ms_overview_data_analysis",
     titleKey: "certifications.items.ms_overview_data_analysis.title",
     issuerKey: "certifications.items.ms_overview_data_analysis.issuer",
     dateKey: "certifications.items.ms_overview_data_analysis.date",
     imageSrc: imgOverviewDataAnalysis,
-    credentialUrl: "",
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/NMTTSUVF?sharingId=FC7223DAAE79B586",
   },
   {
     id: "ms_data_preparation",
@@ -109,7 +156,7 @@ export const certificationItems: CertificationItem[] = [
     issuerKey: "certifications.items.ms_data_preparation.issuer",
     dateKey: "certifications.items.ms_data_preparation.date",
     imageSrc: imgDataPreparation,
-    credentialUrl: "",
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/37KBXWJH?sharingId=FC7223DAAE79B586",
   },
   {
     id: "ms_model_data",
@@ -117,7 +164,7 @@ export const certificationItems: CertificationItem[] = [
     issuerKey: "certifications.items.ms_model_data.issuer",
     dateKey: "certifications.items.ms_model_data.date",
     imageSrc: imgModelData,
-    credentialUrl: "",
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/XELB9QNY?sharingId=FC7223DAAE79B586",
   },
   {
     id: "ms_power_bi_effective",
@@ -125,7 +172,23 @@ export const certificationItems: CertificationItem[] = [
     issuerKey: "certifications.items.ms_power_bi_effective.issuer",
     dateKey: "certifications.items.ms_power_bi_effective.date",
     imageSrc: imgPowerBiEffective,
-    credentialUrl: "",
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/Q5Y4PS8E?sharingId=FC7223DAAE79B586",
+  },
+  {
+    id: "ms_prepare_visualize",
+    titleKey: "certifications.items.ms_prepare_visualize.title",
+    issuerKey: "certifications.items.ms_prepare_visualize.issuer",
+    dateKey: "certifications.items.ms_prepare_visualize.date",
+    imageSrc: imgGenericTrophy,
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/NMLNXCYF?sharingId=FC7223DAAE79B586",
+  },
+  {
+    id: "ms_m365_copilot_agents",
+    titleKey: "certifications.items.ms_m365_copilot_agents.title",
+    issuerKey: "certifications.items.ms_m365_copilot_agents.issuer",
+    dateKey: "certifications.items.ms_m365_copilot_agents.date",
+    imageSrc: imgGenericTrophy,
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/ZDHNZZJ2?sharingId=FC7223DAAE79B586",
   },
   {
     id: "ms_use_dax",
@@ -133,7 +196,7 @@ export const certificationItems: CertificationItem[] = [
     issuerKey: "certifications.items.ms_use_dax.issuer",
     dateKey: "certifications.items.ms_use_dax.date",
     imageSrc: imgUseDax,
-    credentialUrl: "",
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/FQ5QS65X?sharingId=FC7223DAAE79B586",
   },
   {
     id: "ms_transact_sql",
@@ -141,13 +204,21 @@ export const certificationItems: CertificationItem[] = [
     issuerKey: "certifications.items.ms_transact_sql.issuer",
     dateKey: "certifications.items.ms_transact_sql.date",
     imageSrc: imgTransactSql,
-    credentialUrl: "",
+    credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/VTWX86JM?sharingId=FC7223DAAE79B586",
   },
   {
     id: "aws_cloud_foundations",
     titleKey: "certifications.items.aws_cloud_foundations.title",
     issuerKey: "certifications.items.aws_cloud_foundations.issuer",
     dateKey: "certifications.items.aws_cloud_foundations.date",
+    comingSoon: true,
+    credentialUrl: "",
+  },
+    {
+    id: "mongodb_python_path",
+    titleKey: "certifications.items.mongodb_python_path.title",
+    issuerKey: "certifications.items.mongodb_python_path.issuer",
+    dateKey: "certifications.items.mongodb_python_path.date",
     comingSoon: true,
     credentialUrl: "",
   },

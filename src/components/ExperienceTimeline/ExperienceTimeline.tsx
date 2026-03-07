@@ -114,7 +114,7 @@ const ExperienceTimeline: React.FC = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="mt-3 p-5 rounded-xl border border-accent/30 bg-surface/60 backdrop-blur-sm">
+            <div className="mt-3 p-5 rounded-xl border border-accent/30 bg-surface">
               <div className="flex items-center gap-2 mb-3">
                 {selectedItem.logoUrl ? (
                   <img
@@ -173,7 +173,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
       <motion.div
         whileHover={{ y: -4 }}
         onClick={hasDescription ? onSelect : undefined}
-        className={`w-[180px] rounded-xl border p-4 mb-4 transition-all backdrop-blur-sm ${
+        className={`w-[180px] rounded-xl border p-4 mb-4 transition-all ${
           isSelected
             ? "border-accent bg-accent/10 shadow-[0_0_16px_rgba(0,229,160,0.15)]"
             : "border-border bg-surface/60 hover:border-accent/40"

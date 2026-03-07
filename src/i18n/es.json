@@ -157,6 +157,43 @@
       "politica": "Política"
     }
   },
+  "projects": {
+    "title": "Proyectos",
+    "items": {
+      "microsystems_programming": {
+        "title": "Programación de microsistemas",
+        "description": "Prácticas con ESP32 y Arduino para control y automatización de sistemas pequeños."
+      },
+      "sensor_cloud_discord": {
+        "title": "Sensores conectados a nube y Discord",
+        "description": "Parametrización de sensores y envío de datos a servicios cloud y canales de Discord."
+      },
+      "power_bi_visuals": {
+        "title": "Visuales en Power BI",
+        "description": "Creación de visualizaciones para presentar resultados y métricas de forma clara."
+      },
+      "home_media_server": {
+        "title": "Servidor multimedia en casa",
+        "description": "Montaje de servidor multimedia contenerizado para uso personal y gestión local de contenido."
+      },
+      "cv_website": {
+        "title": "Desarrollo web de esta página",
+        "description": "Diseño y desarrollo iterativo de este CV online con enfoque visual y técnico."
+      },
+      "personal_website": {
+        "title": "Página web personal",
+        "description": "Construcción de una web personal para experimentar con frontend y comunicación de proyectos."
+      },
+      "firefox_extension": {
+        "title": "Extensión de Firefox",
+        "description": "Desarrollo de una extensión para Firefox para añadir funcionalidades personalizadas al navegador."
+      }
+    },
+    "tags": {
+      "UNIVERSIDAD": "Universidad",
+      "TIEMPO LIBRE": "Tiempo libre"
+    }
+  },
   "contact": {
     "title": "Contacto",
     "email": "Email",
@@ -172,7 +209,7 @@
       "mongodb_relational_model": {
         "title": "From Relational Model (SQL) to MongoDB's Document Model",
         "issuer": "MongoDB",
-        "date": "2025"
+        "date": "5/3/2026"
       },
       "microsoft_dp900": {
         "title": "Microsoft Azure Data Fundamentals (DP-900)",
@@ -185,34 +222,44 @@
         "date": "Próximamente"
       },
       "ms_overview_data_analysis": {
-        "title": "Introducción al análisis de datos en Azure",
+        "title": "Introducción al análisis de datos de Microsoft",
         "issuer": "Microsoft Learn",
-        "date": "2025"
+        "date": "3/2/2026"
       },
       "ms_data_preparation": {
-        "title": "Preparar datos para análisis con Power BI",
+        "title": "Preparación de datos para el análisis con Power BI",
         "issuer": "Microsoft Learn",
-        "date": "2025"
+        "date": "3/2/2026"
       },
       "ms_model_data": {
         "title": "Modelar datos en Power BI",
         "issuer": "Microsoft Learn",
-        "date": "2025"
+        "date": "10/2/2026"
       },
       "ms_power_bi_effective": {
-        "title": "Crear informes eficaces en Power BI",
+        "title": "Diseño de informes eficaces en Power BI",
         "issuer": "Microsoft Learn",
-        "date": "2025"
+        "date": "3/3/2026"
+      },
+      "ms_prepare_visualize": {
+        "title": "Preparar y visualizar datos con Microsoft Power BI",
+        "issuer": "Microsoft Learn",
+        "date": "25/2/2026"
+      },
+      "ms_m365_copilot_agents": {
+        "title": "Mejora de la productividad con agentes copilot precompilados de Microsoft 365",
+        "issuer": "Microsoft Learn",
+        "date": "24/2/2026"
       },
       "ms_use_dax": {
-        "title": "Usar DAX en Power BI Desktop",
+        "title": "Uso de DAX en los modelos semánticos",
         "issuer": "Microsoft Learn",
-        "date": "2025"
+        "date": "9/2/2026"
       },
       "ms_transact_sql": {
-        "title": "Empezar a consultar con Transact-SQL",
+        "title": "Consulta y modificación de datos con Transact-SQL",
         "issuer": "Microsoft Learn",
-        "date": "2025"
+        "date": "24/2/2026"
       },
       "aws_cloud_foundations": {
         "title": "AWS Cloud Foundations",

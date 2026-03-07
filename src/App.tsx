@@ -5,9 +5,12 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import AboutSection from "./components/AboutSection/AboutSection";
 import ContactSection from "./components/ContactSection/ContactSection";
 import ExperienceTimeline from "./components/ExperienceTimeline/ExperienceTimeline";
+import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import CertificationsSection from "./components/CertificationsSection/CertificationsSection";
 import { FlickeringGrid } from "./components/ui/flickering-grid";
+import { LocationTag } from "./components/ui/LocationTag";
 import { useTranslation } from "react-i18next";
+import profileImg from "./images/profile.gif";
 
 function App() {
   return (
@@ -34,13 +37,38 @@ function App() {
             {/* About */}
             <section id="about" className="px-4 md:px-8 lg:px-16 py-12">
               <SectionHeading titleKey="about.title" />
-              <AboutSection />
+              <div className="flex justify-center">
+                <div className="flex flex-col md:flex-row gap-8 items-start">
+                  <AboutSection />
+                  <div className="flex w-56 flex-col items-center gap-3 shrink-0">
+                    <img
+                      src={profileImg}
+                      alt="Carlos Moreno"
+                      className="w-full h-40 rounded-xl border border-border/80 object-cover"
+                    />
+                    <LocationTag
+                      city="Zaragoza"
+                      country="Spain"
+                      timezone="CET"
+                      className="w-full justify-between px-3 py-1.5 text-sm"
+                    />
+                  </div>
+                </div>
+              </div>
             </section>
 
             {/* Experience */}
             <section id="experience" className="px-4 md:px-8 lg:px-16 py-12">
               <SectionHeading titleKey="experience.title" />
-              <ExperienceTimeline />
+              <div className="flex justify-center">
+                <ExperienceTimeline />
+              </div>
+            </section>
+
+            {/* Projects */}
+            <section id="projects" className="px-4 md:px-8 lg:px-16 py-12">
+              <SectionHeading titleKey="projects.title" />
+              <ProjectsSection />
             </section>
 
             {/* Certifications */}

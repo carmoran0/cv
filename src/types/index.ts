@@ -64,3 +64,12 @@ export interface CertificationItem {
   imageSrc?: string;
   comingSoon?: boolean;
 }
+
+export type ProjectTag = "UNIVERSIDAD" | "TIEMPO LIBRE";
+
+export interface ProjectItem {
+  id: string;
+  titleKey: string;
+  descriptionKey: string;
+  tags: ProjectTag[];
+}
