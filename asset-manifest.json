@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cv/static/css/main.35d584ef.css",
-    "main.js": "/cv/static/js/main.50d07857.js",
+    "main.css": "/cv/static/css/main.2c81f7da.css",
+    "main.js": "/cv/static/js/main.62b3ac01.js",
     "static/js/453.f2dee870.chunk.js": "/cv/static/js/453.f2dee870.chunk.js",
     "static/media/profile.gif": "/cv/static/media/profile.5f9d38186727bc7e64c2.gif",
     "static/media/DiamondGrotesk-VF.ttf": "/cv/static/media/DiamondGrotesk-VF.9a4b8104aa3e0ef02faa.ttf",
@@ -14,12 +14,12 @@
     "static/media/overview-data-analysis-power-bi.svg": "/cv/static/media/overview-data-analysis-power-bi.ea47fea58fa9c61ca20a472bc27e67c3.svg",
     "static/media/power-bi-effective.svg": "/cv/static/media/power-bi-effective.20c77bf849b4750c0a6b1e2765bc42fb.svg",
     "index.html": "/cv/index.html",
-    "main.35d584ef.css.map": "/cv/static/css/main.35d584ef.css.map",
-    "main.50d07857.js.map": "/cv/static/js/main.50d07857.js.map",
+    "main.2c81f7da.css.map": "/cv/static/css/main.2c81f7da.css.map",
+    "main.62b3ac01.js.map": "/cv/static/js/main.62b3ac01.js.map",
     "453.f2dee870.chunk.js.map": "/cv/static/js/453.f2dee870.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35d584ef.css",
-    "static/js/main.50d07857.js"
+    "static/css/main.2c81f7da.css",
+    "static/js/main.62b3ac01.js"
   ]
 }
