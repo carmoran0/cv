@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/cv/static/css/main.2c81f7da.css",
-    "main.js": "/cv/static/js/main.62b3ac01.js",
+    "main.js": "/cv/static/js/main.85b42b41.js",
     "static/js/453.f2dee870.chunk.js": "/cv/static/js/453.f2dee870.chunk.js",
-    "static/media/profile.gif": "/cv/static/media/profile.5f9d38186727bc7e64c2.gif",
     "static/media/DiamondGrotesk-VF.ttf": "/cv/static/media/DiamondGrotesk-VF.9a4b8104aa3e0ef02faa.ttf",
     "static/media/model-data-power-bi.svg": "/cv/static/media/model-data-power-bi.e2fe039e7193da9d6d4ed411a0c30f6e.svg",
-    "static/media/from-relational-model-sql-to-mongodb-s-document-mod.png": "/cv/static/media/from-relational-model-sql-to-mongodb-s-document-mod.b7cbb8988945222fd1aa.png",
+    "static/media/profile.webp": "/cv/static/media/profile.9658a47501e3e005e0ef.webp",
     "static/media/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.svg": "/cv/static/media/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.02f68283bc03d85c83178b245d0ed83e.svg",
     "static/media/generic-trophy.svg": "/cv/static/media/generic-trophy.9f6c2349724457ca773bd7a267a575bf.svg",
     "static/media/data-preparation-in-power-bi.svg": "/cv/static/media/data-preparation-in-power-bi.90e13dd7fd1919a8986655b399f15820.svg",
     "static/media/get-started-querying-with-transact-sql.svg": "/cv/static/media/get-started-querying-with-transact-sql.55cfab07ea4cbf59117d2ee34015a906.svg",
     "static/media/overview-data-analysis-power-bi.svg": "/cv/static/media/overview-data-analysis-power-bi.ea47fea58fa9c61ca20a472bc27e67c3.svg",
     "static/media/power-bi-effective.svg": "/cv/static/media/power-bi-effective.20c77bf849b4750c0a6b1e2765bc42fb.svg",
+    "static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.webp": "/cv/static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.4f86959905c819b50a08.webp",
     "index.html": "/cv/index.html",
     "main.2c81f7da.css.map": "/cv/static/css/main.2c81f7da.css.map",
-    "main.62b3ac01.js.map": "/cv/static/js/main.62b3ac01.js.map",
+    "main.85b42b41.js.map": "/cv/static/js/main.85b42b41.js.map",
     "453.f2dee870.chunk.js.map": "/cv/static/js/453.f2dee870.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c81f7da.css",
-    "static/js/main.62b3ac01.js"
+    "static/js/main.85b42b41.js"
   ]
 }
