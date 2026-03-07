@@ -44,52 +44,24 @@ const TopBar: React.FC = () => {
         </button>
       </div>
 
-      {/* Right: Mode Toggle + CTA */}
+      {/* Right: Coming Soon */}
       <div className="flex items-center gap-3">
-        <div className="flex items-center gap-1 bg-bg rounded-lg p-1">
-          <button
-            onClick={() => mode !== "recruiter" && toggleMode()}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 ${
-              mode === "recruiter"
-                ? "bg-accent text-white"
-                : "text-text-secondary hover:text-text-primary"
-            }`}
-          >
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={`recruiter-${i18n.language}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {t("topbar.recruiter")}
-              </motion.span>
-            </AnimatePresence>
-          </button>
-          <button
-            onClick={() => mode !== "technical" && toggleMode()}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 ${
-              mode === "technical"
-                ? "bg-accent text-white"
-                : "text-text-secondary hover:text-text-primary"
-            }`}
-          >
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={`technical-${i18n.language}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {t("topbar.technical")}
-              </motion.span>
-            </AnimatePresence>
-          </button>
-        </div>
-
-        {/* 'Available for internships' CTA removed per request */}
+        <button
+          disabled
+          className="px-3 py-1.5 rounded-md text-xs font-medium bg-bg text-text-secondary cursor-not-allowed"
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={`coming-soon-${i18n.language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {t("topbar.coming_soon")}
+            </motion.span>
+          </AnimatePresence>
+        </button>
       </div>
     </motion.header>
   );

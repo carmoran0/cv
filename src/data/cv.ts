@@ -213,6 +213,13 @@ export const certificationItems: CertificationItem[] = [
     imageSrc: imgTransactSql,
     credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/VTWX86JM?sharingId=FC7223DAAE79B586",
   },
+    {
+    id: "claude_code_in_action",
+    titleKey: "certifications.items.claude_code_in_action.title",
+    issuerKey: "certifications.items.claude_code_in_action.issuer",
+    dateKey: "certifications.items.claude_code_in_action.date",
+    credentialUrl: "https://verify.skilljar.com/c/2egzywwxpdnn",
+  },
   {
     id: "aws_cloud_foundations",
     titleKey: "certifications.items.aws_cloud_foundations.title",
@@ -229,4 +236,5 @@ export const certificationItems: CertificationItem[] = [
     comingSoon: true,
     credentialUrl: "",
   },
+
 ];

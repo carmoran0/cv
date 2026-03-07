@@ -5,7 +5,8 @@
   "topbar": {
     "available": "Disponible para prácticas →",
     "recruiter": "Reclutador",
-    "technical": "Técnico"
+    "technical": "Técnico",
+    "coming_soon": "Próximamente"
   },
   "sidebar": {
     "overview": "Resumen",
@@ -270,6 +271,11 @@
         "title": "MongoDB Python Developer Path",
         "issuer": "MongoDB",
         "date": "Próximamente"
+      },
+      "claude_code_in_action": {
+        "title": "Claude Code in Action",
+        "issuer": "Anthropic",
+        "date": "7/3/2026"
       }
     }
   }
