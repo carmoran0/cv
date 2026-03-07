@@ -166,14 +166,14 @@
       },
       "sensor_cloud_discord": {
         "title": "Sensors connected to cloud and Discord",
-        "description": "Sensor parameter tuning and data delivery to cloud services and Discord channels."
+        "description": "Sensor parameter (ifm) tuning and autoamtion/data delivery to cloud services and Discord channels using node-red."
       },
       "power_bi_visuals": {
         "title": "Power BI visuals",
         "description": "Built concise visual reports to present key results and metrics clearly."
       },
       "home_media_server": {
-        "title": "Home media server",
+        "title": "Home server",
         "description": "Set up a containerized home media server for personal streaming and content management."
       },
       "cv_website": {
@@ -182,16 +182,16 @@
       },
       "personal_website": {
         "title": "Personal website",
-        "description": "Built a personal site to experiment with frontend development and project storytelling."
+        "description": "Built a personal site to experiment with frontend development and project storytelling without using frameworks."
       },
       "firefox_extension": {
         "title": "Firefox extension",
-        "description": "Developed a Firefox browser extension to add custom functionality to the browser."
+        "description": "Developed a Firefox browser extension to add custom functionality to the moodle of unizar. (5 users/day)"
       }
     },
     "tags": {
       "UNIVERSIDAD": "University",
-      "TIEMPO LIBRE": "Free time"
+      "PERSONAL": "Free time"
     }
   },
   "contact": {

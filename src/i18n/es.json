@@ -137,7 +137,7 @@
         "role": "Diseñador gráfico",
         "period": "jun. 2020 – abr. 2022 · 1 año 11 meses",
         "location": "En remoto",
-        "description": "Durante los veranos y en mi tiempo libre, trabajé como diseñador gráfico freelance en Fiverr, desarrollando encargos personalizados para clientes de todo el mundo. Tuve la oportunidad de crear material visual diverso adaptándome a las necesidades de cada cliente. Esta experiencia no solo me permitió perfeccionar mis habilidades en herramientas de diseño de software, sino también aprender a gestionar proyectos de principio a fin y trabajar con clientes muy diferentes. Gracias a esta etapa, he podido aplicar mi creatividad y mi gusto por el diseño al mundo tecnológico, sobre todo aportando valor en proyectos donde se cruzan datos, tecnología y comunicación visual."
+        "description": "Durante los veranos y en mi PERSONAL, trabajé como diseñador gráfico freelance en Fiverr, desarrollando encargos personalizados para clientes de todo el mundo. Tuve la oportunidad de crear material visual diverso adaptándome a las necesidades de cada cliente. Esta experiencia no solo me permitió perfeccionar mis habilidades en herramientas de diseño de software, sino también aprender a gestionar proyectos de principio a fin y trabajar con clientes muy diferentes. Gracias a esta etapa, he podido aplicar mi creatividad y mi gusto por el diseño al mundo tecnológico, sobre todo aportando valor en proyectos donde se cruzan datos, tecnología y comunicación visual."
       },
       "unita_cabeza": {
         "organization": "UNITA – Universitas Montium",
@@ -166,7 +166,7 @@
       },
       "sensor_cloud_discord": {
         "title": "Sensores conectados a nube y Discord",
-        "description": "Parametrización de sensores y envío de datos a servicios cloud y canales de Discord."
+        "description": "Parametrización y automatización de sensores (ifm) y procesamiento/envío de datos a servicios cloud y canales de Discord con node-red."
       },
       "power_bi_visuals": {
         "title": "Visuales en Power BI",
@@ -182,16 +182,16 @@
       },
       "personal_website": {
         "title": "Página web personal",
-        "description": "Construcción de una web personal para experimentar con frontend y comunicación de proyectos."
+        "description": "Construcción de una web personal para experimentar con frontend, sin usar frameworks."
       },
       "firefox_extension": {
         "title": "Extensión de Firefox",
-        "description": "Desarrollo de una extensión para Firefox para añadir funcionalidades personalizadas al navegador."
+        "description": "Desarrollo de una extensión para Firefox para añadir funcionalidades personalizadas al moodle de unizar. (5 usuarios/día)"
       }
     },
     "tags": {
       "UNIVERSIDAD": "Universidad",
-      "TIEMPO LIBRE": "Tiempo libre"
+      "PERSONAL": "PERSONAL"
     }
   },
   "contact": {

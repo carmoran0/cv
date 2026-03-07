@@ -65,11 +65,12 @@ export interface CertificationItem {
   comingSoon?: boolean;
 }
 
-export type ProjectTag = "UNIVERSIDAD" | "TIEMPO LIBRE";
+export type ProjectTag = "UNIVERSIDAD" | "PERSONAL";
 
 export interface ProjectItem {
   id: string;
   titleKey: string;
   descriptionKey: string;
   tags: ProjectTag[];
+  skills?: string[];
 }

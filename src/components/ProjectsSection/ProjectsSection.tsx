@@ -6,7 +6,7 @@ import { ProjectItem, ProjectTag } from "../../types";
 
 const tagClasses: Record<ProjectTag, string> = {
   UNIVERSIDAD: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-  "TIEMPO LIBRE": "bg-amber-500/20 text-amber-300 border-amber-500/30",
+  "PERSONAL": "bg-amber-500/20 text-amber-300 border-amber-500/30",
 };
 
 const ChipIcon = () => (
@@ -109,6 +109,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, t }) => {
               </span>
             ))}
           </div>
+          {project.skills && project.skills.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1">
+              {project.skills.map((skill) => (
+                <span
+                  key={`${project.id}-skill-${skill}`}
+                  className="inline-flex items-center rounded-md border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] text-text-secondary"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.article>
