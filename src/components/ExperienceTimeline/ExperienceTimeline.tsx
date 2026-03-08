@@ -54,7 +54,11 @@ const ExperienceTimeline: React.FC = () => {
   };
 
   return (
-    <div className="relative max-w-full overflow-hidden">
+    <motion.div
+      layout
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="relative max-w-full overflow-hidden"
+    >
       {/* Scroll arrows */}
       {canScrollLeft && (
         <button
@@ -84,14 +88,19 @@ const ExperienceTimeline: React.FC = () => {
       )}
 
       {/* Horizontal scrollable timeline */}
-      <div
+      <motion.div
+        layout
         ref={scrollRef}
         className="max-w-full overflow-x-auto scrollbar-hide pb-4 [overscroll-behavior-x:contain]"
       >
-        <div className="relative flex items-end gap-0 min-w-max px-4 md:px-6 pt-4 pb-2">
+        <motion.div
+          layout
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="relative flex items-end gap-0 min-w-max px-4 md:px-6 pt-4 pb-2"
+        >
           {/* Horizontal line */}
-          <div className="absolute bottom-[22px] left-0 right-0 h-px bg-border" />
-          <div className="absolute bottom-[22px] left-0 right-0 h-px bg-accent/20" />
+          <div className="absolute bottom-[15px] left-0 right-0 h-px bg-border" />
+          <div className="absolute bottom-[15px] left-0 right-0 h-px bg-accent/20" />
 
           {sorted.map((item, idx) => (
             <TimelineNode
@@ -103,13 +112,14 @@ const ExperienceTimeline: React.FC = () => {
               t={t}
             />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Expanded detail panel */}
       <AnimatePresence mode="wait">
         {selectedItem && selectedItem.descriptionKey && (
           <motion.div
+            layout
             key={selectedItem.id}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -142,7 +152,7 @@ const ExperienceTimeline: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
@@ -165,6 +175,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
 
   return (
     <motion.div
+      layout
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -173,14 +184,16 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
     >
       {/* Card above the line */}
       <motion.div
+        layout
         whileHover={{ y: -4 }}
         onClick={hasDescription ? onSelect : undefined}
-        className={`w-[150px] sm:w-[170px] md:w-[180px] rounded-xl border p-3 md:p-4 mb-4 transition-all ${
+        className={`w-[150px] sm:w-[170px] md:w-[180px] h-[200px] rounded-xl border p-3 md:p-4 mb-4 transition-all flex flex-col ${
           isSelected
             ? "border-accent bg-accent/10 shadow-[0_0_16px_rgba(0,229,160,0.15)]"
             : "border-border bg-surface/60 hover:border-accent/40"
         } ${hasDescription ? "cursor-pointer" : ""}`}
       >
+
         <div className="flex items-center gap-2 mb-2">
           {item.logoUrl ? (
             <img
@@ -196,49 +209,54 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
           </span>
         </div>
 
-        <h3 className="text-sm font-semibold text-text-primary leading-snug mb-1">
-          {t(item.roleKey)}
-        </h3>
-        <p className="text-xs text-text-secondary leading-tight">
-          {t(item.organizationKey)}
-        </p>
+        <div className="flex-grow flex flex-col">
+          <h3 className="text-sm font-semibold text-text-primary leading-snug mb-1">
+            {t(item.roleKey)}
+          </h3>
+          <p className="text-xs text-text-secondary leading-tight">
+            {t(item.organizationKey)}
+          </p>
+        </div>
 
         {/* Tags */}
-        {item.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1 mt-2">
-            {item.tags.map((tag) => (
-              <span
-                key={tag}
-                className={`text-[10px] px-1.5 py-0.5 rounded-full border font-medium uppercase tracking-wider ${
-                  tagColors[tag] || "bg-accent/10 text-accent border-accent/30"
-                }`}
-              >
-                {t(`experience.tags.${tag}`)}
-              </span>
-            ))}
-          </div>
-        )}
+        <div className="mt-auto">
+          {item.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1 mb-2">
+              {item.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={`text-[10px] px-1.5 py-0.5 rounded-full border font-medium uppercase tracking-wider ${
+                    tagColors[tag] || "bg-accent/10 text-accent border-accent/30"
+                  }`}
+                >
+                  {t(`experience.tags.${tag}`)}
+                </span>
+              ))}
+            </div>
+          )}
 
-        {/* Location badge */}
-        {item.locationKey && (
-          <span className="inline-block mt-2 text-[10px] px-1.5 py-0.5 rounded-full bg-surface border border-border text-text-secondary">
-            {t(item.locationKey)}
-          </span>
-        )}
-
-        {/* Click indicator */}
-        {hasDescription && (
-          <div className="flex items-center gap-1 mt-2 text-[10px] text-accent/60">
-            <span>{isSelected ? "▲" : "▼"}</span>
-            <span className="font-medium">
-              {isSelected ? "−" : "+"}
+          {/* Location badge */}
+          {item.locationKey && (
+            <span className="inline-block mb-2 text-[10px] px-1.5 py-0.5 rounded-full bg-surface border border-border text-text-secondary">
+              {t(item.locationKey)}
             </span>
-          </div>
-        )}
+          )}
+
+          {/* Click indicator */}
+          {hasDescription && (
+            <div className="flex items-center gap-1 text-[10px] text-accent/60">
+              <span>{isSelected ? "▲" : "▼"}</span>
+              <span className="font-medium">
+                {isSelected ? "−" : "+"}
+              </span>
+            </div>
+          )}
+        </div>
       </motion.div>
 
       {/* Timeline dot */}
       <motion.div
+        layout
         animate={
           isSelected
             ? { scale: 1.3, boxShadow: "0 0 12px rgba(0,229,160,0.6)" }

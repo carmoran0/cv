@@ -122,8 +122,8 @@
   },
   "about": {
     "title": "About",
-    "recruiter": "Hi, I'm Carlos — Data Engineering & BI student at Universidad de Zaragoza (3rd year). I build pipelines, models and dashboards that turn data into decisions. I also bring a design background from 2 years as a freelance graphic designer. Looking for an internship where I can contribute and grow fast.",
-    "technical": "3rd year Data Engineering student (Univ. Zaragoza, 2023–2027). Interested in DE pipelines (ingestion, transformation, storage, orchestration) and BI layers (modeling, metrics, dashboards). Background in graphic design (Fiverr, 2020–2022) — useful for data viz and communication. Comfortable with SQL and NoSQL (MongoDB). Currently expanding full-stack skills. Not focused on Data Science / model training."
+    "recruiter": "Hello world, I'm Carlos, a Data Engineering student at the University of Zaragoza (currently in my third year), a geek for new tools and languages, and I never stop diving into personal projects to experiment and grow. \n I like combining the technical with the creative to bring innovative ideas to life. I'm always looking for new challenges, whether in data, development, or design. \n If you're into technology, data, or you have a cool project in mind, let's talk and build something together!",
+    "technical": "Hello world, I'm Carlos, a Data Engineering student at the University of Zaragoza (currently in my third year), a geek for new tools and languages, and I never stop diving into personal projects to experiment and grow. \n I like combining the technical with the creative to bring innovative ideas to life. I'm always looking for new challenges, whether in data, development, or design. \n If you're into technology, data, or you have a cool project in mind, let's talk and build something together!"
   },
   "experience": {
     "title": "Experience",
