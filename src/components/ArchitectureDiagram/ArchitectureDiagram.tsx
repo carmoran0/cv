@@ -21,14 +21,15 @@ const ArchitectureDiagram: React.FC = () => {
         </motion.h3>
       </AnimatePresence>
 
-      <div className="flex flex-wrap items-center justify-center gap-2 md:gap-0">
+      <div className="max-w-full overflow-x-auto [overscroll-behavior-x:contain]">
+        <div className="flex min-w-max flex-nowrap md:flex-wrap items-center justify-start md:justify-center gap-2 md:gap-0 pb-1">
         {architectureNodes.map((node, idx) => (
           <React.Fragment key={node.id}>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: idx * 0.1 }}
-              className="group relative flex flex-col items-center gap-2 px-4 py-3 rounded-lg bg-bg border border-border hover:border-accent/50 transition-all cursor-default min-w-[100px]"
+              className="group relative flex flex-col items-center gap-2 px-3 md:px-4 py-3 rounded-lg bg-bg border border-border hover:border-accent/50 transition-all cursor-default min-w-[84px] md:min-w-[100px]"
             >
               <AnimatePresence mode="wait">
                 <motion.span
@@ -77,6 +78,7 @@ const ArchitectureDiagram: React.FC = () => {
             )}
           </React.Fragment>
         ))}
+        </div>
       </div>
     </div>
   );

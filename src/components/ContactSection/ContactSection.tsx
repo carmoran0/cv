@@ -81,11 +81,11 @@ const ContactSection: React.FC = () => {
             <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent/10 text-accent text-xs font-sans font-bold group-hover:bg-accent/20 transition-colors">
               {link.icon}
             </span>
-            <div className="flex flex-col">
+            <div className="flex min-w-0 flex-col">
               <span className="text-[10px] font-sans font-semibold tracking-wide text-text-secondary uppercase">
                 {link.label}
               </span>
-              <span className="text-sm text-text-primary group-hover:text-accent transition-colors">
+              <span className="truncate text-sm text-text-primary group-hover:text-accent transition-colors">
                 {link.value}
               </span>
             </div>

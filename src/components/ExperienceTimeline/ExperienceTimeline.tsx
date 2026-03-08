@@ -40,8 +40,11 @@ const ExperienceTimeline: React.FC = () => {
   }, [checkScroll]);
 
   const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const step = Math.max(180, Math.floor(el.clientWidth * 0.8));
     scrollRef.current?.scrollBy({
-      left: dir === "left" ? -280 : 280,
+      left: dir === "left" ? -step : step,
       behavior: "smooth",
     });
   };
@@ -51,7 +54,7 @@ const ExperienceTimeline: React.FC = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative max-w-full overflow-hidden">
       {/* Scroll arrows */}
       {canScrollLeft && (
         <button
@@ -83,9 +86,9 @@ const ExperienceTimeline: React.FC = () => {
       {/* Horizontal scrollable timeline */}
       <div
         ref={scrollRef}
-        className="overflow-x-auto scrollbar-hide pb-4"
+        className="max-w-full overflow-x-auto scrollbar-hide pb-4 [overscroll-behavior-x:contain]"
       >
-        <div className="relative flex items-end gap-0 min-w-max px-6 pt-4 pb-2">
+        <div className="relative flex items-end gap-0 min-w-max px-4 md:px-6 pt-4 pb-2">
           {/* Horizontal line */}
           <div className="absolute bottom-[22px] left-0 right-0 h-px bg-border" />
           <div className="absolute bottom-[22px] left-0 right-0 h-px bg-accent/20" />
@@ -166,14 +169,13 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.12 }}
-      className="relative flex flex-col items-center"
-      style={{ minWidth: 200 }}
+      className="relative flex min-w-[160px] sm:min-w-[180px] md:min-w-[200px] flex-col items-center"
     >
       {/* Card above the line */}
       <motion.div
         whileHover={{ y: -4 }}
         onClick={hasDescription ? onSelect : undefined}
-        className={`w-[180px] rounded-xl border p-4 mb-4 transition-all ${
+        className={`w-[150px] sm:w-[170px] md:w-[180px] rounded-xl border p-3 md:p-4 mb-4 transition-all ${
           isSelected
             ? "border-accent bg-accent/10 shadow-[0_0_16px_rgba(0,229,160,0.15)]"
             : "border-border bg-surface/60 hover:border-accent/40"

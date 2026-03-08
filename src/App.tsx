@@ -15,7 +15,7 @@ import profileImg from "./images/profile.webp";
 function App() {
   return (
     <ModeProvider>
-      <div className="relative min-h-[calc(100vh-2rem)] w-[min(1200px,calc(100%-2rem))] mx-auto my-4 border-[10px] border-border bg-bg text-text-primary flex flex-col overflow-hidden">
+      <div className="relative min-h-[calc(100vh-0.5rem)] md:min-h-[calc(100vh-2rem)] w-[min(1200px,calc(100%-0.5rem))] md:w-[min(1200px,calc(100%-2rem))] mx-auto my-1 md:my-4 border-[4px] md:border-[10px] border-border bg-bg text-text-primary flex flex-col overflow-hidden">
         {/* Flickering grid background */}
         <FlickeringGrid
           className="z-0 absolute inset-0 size-full"
@@ -35,12 +35,12 @@ function App() {
             <HeroSection />
 
             {/* About */}
-            <section id="about" className="px-4 md:px-8 lg:px-16 py-12">
+            <section id="about" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
               <SectionHeading titleKey="about.title" />
               <div className="flex justify-center">
-                <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex w-full flex-col md:flex-row gap-8 items-center md:items-start">
                   <AboutSection />
-                  <div className="flex w-56 flex-col items-center gap-3 shrink-0">
+                  <div className="flex w-full max-w-56 md:w-56 flex-col items-center gap-3 shrink-0">
                     <img
                       src={profileImg}
                       alt="Carlos Moreno"
@@ -58,7 +58,7 @@ function App() {
             </section>
 
             {/* Experience */}
-            <section id="experience" className="px-4 md:px-8 lg:px-16 py-12">
+            <section id="experience" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
               <SectionHeading titleKey="experience.title" />
               <div className="flex justify-center">
                 <ExperienceTimeline />
@@ -66,19 +66,19 @@ function App() {
             </section>
 
             {/* Projects */}
-            <section id="projects" className="px-4 md:px-8 lg:px-16 py-12">
+            <section id="projects" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
               <SectionHeading titleKey="projects.title" />
               <ProjectsSection />
             </section>
 
             {/* Certifications */}
-            <section id="certifications" className="px-4 md:px-8 lg:px-16 py-12">
+            <section id="certifications" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
               <SectionHeading titleKey="certifications.title" />
               <CertificationsSection />
             </section>
 
             {/* Contact */}
-            <section id="contact" className="px-4 md:px-8 lg:px-16 py-12">
+            <section id="contact" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
               <ContactSection />
             </section>
           </main>

@@ -12,7 +12,7 @@ export const BubbleText: React.FC<BubbleTextProps> = ({
   return (
     <h2
       onMouseLeave={() => setHoveredIndex(null)}
-      className="text-center text-5xl sm:text-7xl md:text-8xl font-thin text-text-primary tracking-tight font-hero"
+      className="max-w-full overflow-hidden text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-thin text-text-primary tracking-tight font-hero"
     >
       {text.split("").map((char, idx) => {
         const distance =

@@ -15,7 +15,7 @@ const CertificationsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: idx * 0.06 }}
-          className="w-44 shrink-0"
+          className="w-36 sm:w-40 md:w-44 shrink-0"
         >
           <a
             href={cert.credentialUrl || undefined}

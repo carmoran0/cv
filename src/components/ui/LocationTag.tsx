@@ -37,7 +37,7 @@ export function LocationTag({
     <button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative flex items-center gap-3 rounded-full border border-border/60 bg-surface/50 px-4 py-2.5 transition-all duration-500 ease-out hover:border-text-primary/20 hover:bg-surface/80 hover:shadow-[0_0_20px_rgba(0,0,0,0.04)] whitespace-nowrap ${className}`}
+      className={`group relative flex max-w-full items-center gap-3 overflow-hidden rounded-full border border-border/60 bg-surface/50 px-4 py-2.5 transition-all duration-500 ease-out hover:border-text-primary/20 hover:bg-surface/80 hover:shadow-[0_0_20px_rgba(0,0,0,0.04)] whitespace-nowrap ${className}`}
     >
       <div className="relative flex items-center justify-center">
         <span className="relative flex h-2 w-2">
@@ -46,9 +46,9 @@ export function LocationTag({
         </span>
       </div>
 
-      <div className="flex items-center gap-2 overflow-hidden">
+      <div className="relative min-w-0 flex-1 overflow-hidden">
         <span
-          className="text-sm font-medium text-text-primary transition-all duration-500 whitespace-nowrap"
+          className="block text-sm font-medium text-text-primary transition-all duration-500 whitespace-nowrap"
           style={{
             transform: isHovered ? "translateY(-100%)" : "translateY(0)",
             opacity: isHovered ? 0 : 1,
@@ -58,7 +58,7 @@ export function LocationTag({
         </span>
 
         <span
-          className="absolute left-11 text-sm font-medium text-text-primary transition-all duration-500 whitespace-nowrap"
+          className="pointer-events-none absolute inset-0 text-sm font-medium text-text-primary transition-all duration-500 whitespace-nowrap"
           style={{
             transform: isHovered ? "translateY(0)" : "translateY(100%)",
             opacity: isHovered ? 1 : 0,

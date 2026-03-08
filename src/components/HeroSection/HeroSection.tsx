@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[70vh] px-6 py-20 text-center">
+    <section className="relative flex flex-col items-center justify-center min-h-[50vh] md:min-h-[70vh] px-4 md:px-6 py-10 md:py-20 text-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

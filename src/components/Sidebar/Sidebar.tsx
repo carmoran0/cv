@@ -64,7 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
             }`}
           >
             <span className="text-sm">{section.icon}</span>
-            <span className="text-[10px]">{t(section.labelKey)}</span>
+            <span className="text-[11px] leading-none">{t(section.labelKey)}</span>
           </button>
         ))}
       </nav>
