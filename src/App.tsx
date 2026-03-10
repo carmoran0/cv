@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ModeProvider } from "./context/ModeContext";
 import TopBar from "./components/TopBar/TopBar";
 import HeroSection from "./components/HeroSection/HeroSection";
@@ -13,6 +13,22 @@ import { useTranslation } from "react-i18next";
 import profileImg from "./images/profile.webp";
 
 function App() {
+  useEffect(() => {
+    const titles = ["Currículum", "Carlos Moreno"];
+    let index = 0;
+
+    document.title = titles[index];
+
+    const intervalId = window.setInterval(() => {
+      index = (index + 1) % titles.length;
+      document.title = titles[index];
+    }, 4000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, []);
+
   return (
     <ModeProvider>
       <div className="relative min-h-[calc(100vh-0.5rem)] md:min-h-[calc(100vh-2rem)] w-[min(1200px,calc(100%-0.5rem))] md:w-[min(1200px,calc(100%-2rem))] mx-auto my-1 md:my-4 border-[4px] md:border-[10px] border-border bg-bg text-text-primary flex flex-col overflow-hidden">

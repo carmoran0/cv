@@ -33,7 +33,8 @@ export const evidenceItems: EvidenceItem[] = [];
 export const skillItems: SkillItem[] = [];
 
 export const contactData = {
-  email: "carmoran05@proton.me",
+  emailUser: "carmoran05",
+  emailDomain: "proton.me",
   linkedin: "https://linkedin.com/in/carlos-moreno-data",
   linkedinLabel: "linkedin.com/in/carlos-moreno-data",
   github: "https://github.com/carmoran0",

@@ -26,13 +26,14 @@ const GitHubIcon = () => (
 
 const ContactSection: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const emailAddress = `${contactData.emailUser}@${contactData.emailDomain}`;
 
   const links = [
     {
       id: "email",
       label: t("contact.email"),
-      value: contactData.email,
-      href: `mailto:${contactData.email}`,
+      value: emailAddress,
+      href: `mailto:${emailAddress}`,
       icon: <EmailIcon />,
     },
     {

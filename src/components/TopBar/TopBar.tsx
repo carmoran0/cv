@@ -1,11 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-import { useMode } from "../../context/ModeContext";
 
 const TopBar: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const { mode, toggleMode } = useMode();
 
   const currentLang = i18n.language;
 
@@ -44,24 +42,25 @@ const TopBar: React.FC = () => {
         </button>
       </div>
 
-      {/* Right: Coming Soon */}
+      {/* Right: CV Download */}
       <div className="flex items-center gap-3">
-        <button
-          disabled
-          className="px-3 py-1.5 rounded-md text-xs font-medium bg-bg text-text-secondary cursor-not-allowed"
+        <a
+          href={`${process.env.PUBLIC_URL}/CV2026.pdf`}
+          download="CV2026.pdf"
+          className="px-3 py-1.5 rounded-md text-xs font-medium bg-accent text-bg hover:opacity-90 transition-opacity"
         >
           <AnimatePresence mode="wait">
             <motion.span
-              key={`coming-soon-${i18n.language}`}
+              key={`download-cv-${i18n.language}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              {t("topbar.coming_soon")}
+              {t("topbar.download_cv")}
             </motion.span>
           </AnimatePresence>
-        </button>
+        </a>
       </div>
     </motion.header>
   );
