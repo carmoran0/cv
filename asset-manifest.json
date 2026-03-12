@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/cv/static/css/main.b175ff60.css",
-    "main.js": "/cv/static/js/main.8ab7af67.js",
-    "static/js/453.f2dee870.chunk.js": "/cv/static/js/453.f2dee870.chunk.js",
-    "static/media/model-data-power-bi.svg": "/cv/static/media/model-data-power-bi.e2fe039e7193da9d6d4ed411a0c30f6e.svg",
-    "static/media/profile.webp": "/cv/static/media/profile.9658a47501e3e005e0ef.webp",
-    "static/media/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.svg": "/cv/static/media/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.02f68283bc03d85c83178b245d0ed83e.svg",
-    "static/media/generic-trophy.svg": "/cv/static/media/generic-trophy.9f6c2349724457ca773bd7a267a575bf.svg",
-    "static/media/data-preparation-in-power-bi.svg": "/cv/static/media/data-preparation-in-power-bi.90e13dd7fd1919a8986655b399f15820.svg",
-    "static/media/get-started-querying-with-transact-sql.svg": "/cv/static/media/get-started-querying-with-transact-sql.55cfab07ea4cbf59117d2ee34015a906.svg",
-    "static/media/overview-data-analysis-power-bi.svg": "/cv/static/media/overview-data-analysis-power-bi.ea47fea58fa9c61ca20a472bc27e67c3.svg",
-    "static/media/power-bi-effective.svg": "/cv/static/media/power-bi-effective.20c77bf849b4750c0a6b1e2765bc42fb.svg",
-    "static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.webp": "/cv/static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.4f86959905c819b50a08.webp",
-    "index.html": "/cv/index.html",
-    "main.b175ff60.css.map": "/cv/static/css/main.b175ff60.css.map",
-    "main.8ab7af67.js.map": "/cv/static/js/main.8ab7af67.js.map",
-    "453.f2dee870.chunk.js.map": "/cv/static/js/453.f2dee870.chunk.js.map"
+    "main.css": "/static/css/main.b175ff60.css",
+    "main.js": "/static/js/main.70c3325d.js",
+    "static/js/453.f2dee870.chunk.js": "/static/js/453.f2dee870.chunk.js",
+    "static/media/model-data-power-bi.svg": "/static/media/model-data-power-bi.e2fe039e7193da9d6d4ed411a0c30f6e.svg",
+    "static/media/profile.webp": "/static/media/profile.9658a47501e3e005e0ef.webp",
+    "static/media/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.svg": "/static/media/Use DAX in Power BI Desktop_use-dax-in-power-bi-desktop.02f68283bc03d85c83178b245d0ed83e.svg",
+    "static/media/generic-trophy.svg": "/static/media/generic-trophy.9f6c2349724457ca773bd7a267a575bf.svg",
+    "static/media/data-preparation-in-power-bi.svg": "/static/media/data-preparation-in-power-bi.90e13dd7fd1919a8986655b399f15820.svg",
+    "static/media/get-started-querying-with-transact-sql.svg": "/static/media/get-started-querying-with-transact-sql.55cfab07ea4cbf59117d2ee34015a906.svg",
+    "static/media/overview-data-analysis-power-bi.svg": "/static/media/overview-data-analysis-power-bi.ea47fea58fa9c61ca20a472bc27e67c3.svg",
+    "static/media/power-bi-effective.svg": "/static/media/power-bi-effective.20c77bf849b4750c0a6b1e2765bc42fb.svg",
+    "static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.webp": "/static/media/from-relational-model-sql-to-mongodb-s-document-mod-96.4f86959905c819b50a08.webp",
+    "index.html": "/index.html",
+    "main.b175ff60.css.map": "/static/css/main.b175ff60.css.map",
+    "main.70c3325d.js.map": "/static/js/main.70c3325d.js.map",
+    "453.f2dee870.chunk.js.map": "/static/js/453.f2dee870.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b175ff60.css",
-    "static/js/main.8ab7af67.js"
+    "static/js/main.70c3325d.js"
   ]
 }
