@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ModeProvider } from "./context/ModeContext";
 import TopBar from "./components/TopBar/TopBar";
 import MobileNotice from "./components/MobileNotice/MobileNotice";
@@ -10,10 +10,14 @@ import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import CertificationsSection from "./components/CertificationsSection/CertificationsSection";
 import { FlickeringGrid } from "./components/ui/flickering-grid";
 import { LocationTag } from "./components/ui/LocationTag";
+import { ZaragozaMap } from "./components/ui/ZaragozaMap";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import profileImg from "./images/profile.webp";
 
 function App() {
+  const [isLocationHovered, setIsLocationHovered] = useState(false);
+
   useEffect(() => {
     const titles = ["Currículum", "Carlos Moreno"];
     let index = 0;
@@ -29,6 +33,17 @@ function App() {
       window.clearInterval(intervalId);
     };
   }, []);
+
+  // Auto-hide mapa después de 2.5 segundos
+  useEffect(() => {
+    if (!isLocationHovered) return;
+
+    const timeoutId = window.setTimeout(() => {
+      setIsLocationHovered(false);
+    }, 2500);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isLocationHovered]);
 
   return (
     <ModeProvider>
@@ -59,16 +74,32 @@ function App() {
                 <div className="flex w-full flex-col md:flex-row gap-8 items-center md:items-start">
                   <AboutSection />
                   <div className="flex w-full max-w-56 md:w-56 flex-col items-center gap-3 shrink-0">
-                    <img
-                      src={profileImg}
-                      alt="Carlos Moreno"
-                      className="w-full h-40 rounded-xl border border-border/80 object-cover"
-                    />
+                    {/* Profile Image Container with Map Animation */}
+                    <div className="relative w-full h-40 rounded-xl border border-border/80 overflow-hidden">
+                      {/* Base profile image */}
+                      <img
+                        src={profileImg}
+                        alt="Carlos Moreno"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+
+                      {/* Map overlay */}
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: isLocationHovered ? 1 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute inset-0 w-full h-full z-20"
+                      >
+                        <ZaragozaMap />
+                      </motion.div>
+                    </div>
+
                     <LocationTag
                       city="Zaragoza"
                       country="Spain"
                       timezone="CET"
                       className="w-full justify-between px-3 py-1.5 text-sm"
+                      onHoverChange={setIsLocationHovered}
                     />
                   </div>
                 </div>

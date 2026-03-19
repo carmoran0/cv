@@ -5,6 +5,7 @@ interface LocationTagProps {
   country?: string;
   timezone?: string;
   className?: string;
+  onHoverChange?: (isHovered: boolean) => void;
 }
 
 export function LocationTag({
@@ -12,6 +13,7 @@ export function LocationTag({
   country = "Spain",
   timezone = "CET",
   className = "",
+  onHoverChange,
 }: LocationTagProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
@@ -35,8 +37,14 @@ export function LocationTag({
 
   return (
     <button
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        onHoverChange?.(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        onHoverChange?.(false);
+      }}
       className={`group relative flex max-w-full items-center gap-3 overflow-hidden rounded-full border border-border/60 bg-surface/50 px-4 py-2.5 transition-all duration-500 ease-out hover:border-text-primary/20 hover:bg-surface/80 hover:shadow-[0_0_20px_rgba(0,0,0,0.04)] whitespace-nowrap ${className}`}
     >
       <div className="relative flex items-center justify-center">
