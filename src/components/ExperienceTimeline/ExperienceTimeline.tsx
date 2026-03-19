@@ -189,8 +189,8 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
         onClick={hasDescription ? onSelect : undefined}
         className={`w-[150px] sm:w-[170px] md:w-[180px] h-[200px] rounded-xl border p-3 md:p-4 mb-4 transition-all flex flex-col ${
           isSelected
-            ? "border-accent bg-accent/10 shadow-[0_0_16px_rgba(0,229,160,0.15)]"
-            : "border-border bg-surface/60 hover:border-accent/40"
+            ? "border-accent bg-gradient-to-b from-accent/25 to-surface shadow-[0_0_20px_rgba(0,229,160,0.22)]"
+            : "border-border bg-surface/60 hover:border-accent/40 hover:bg-surface/85"
         } ${hasDescription ? "cursor-pointer" : ""}`}
       >
 
@@ -244,11 +244,9 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
 
           {/* Click indicator */}
           {hasDescription && (
-            <div className="flex items-center gap-1 text-[10px] text-accent/60">
+            <div className="flex items-center gap-1 text-[10px] text-accent/70">
               <span>{isSelected ? "▲" : "▼"}</span>
-              <span className="font-medium">
-                {isSelected ? "−" : "+"}
-              </span>
+              <span className="font-medium">{isSelected ? t("experience.hide_details") : t("experience.show_details")}</span>
             </div>
           )}
         </div>

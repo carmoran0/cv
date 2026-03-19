@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { ModeProvider } from "./context/ModeContext";
 import TopBar from "./components/TopBar/TopBar";
+import MobileNotice from "./components/MobileNotice/MobileNotice";
 import HeroSection from "./components/HeroSection/HeroSection";
 import AboutSection from "./components/AboutSection/AboutSection";
 import ContactSection from "./components/ContactSection/ContactSection";
@@ -45,6 +46,7 @@ function App() {
         {/* App content */}
         <div className="relative z-10 flex flex-col min-h-full">
           <TopBar />
+          <MobileNotice />
 
           <main className="flex-1 overflow-y-auto">
             {/* Hero */}

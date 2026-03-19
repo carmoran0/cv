@@ -1,6 +1,13 @@
 {
   "hero": {
-    "subtitle": "Data Engineering student · Unizar"
+    "subtitle": "Data Engineering student · Unizar",
+    "availability_badge": "Open to internships"
+  },
+  "mobile_notice": {
+    "title": "Mobile view active",
+    "text": "This CV is best experienced on desktop to see all details.",
+    "close": "Close",
+    "close_aria": "Close desktop recommendation notice"
   },
   "topbar": {
     "available": "Available for internships →",
@@ -56,6 +63,7 @@
     "learned": "Learned",
     "stack": "Stack",
     "university": "University project",
+    "counter": "Showing {{visible}} of {{total}} evidence items",
     "items": {
       "etl_pipeline": {
         "title": "ETL Pipeline — Sales Data",
@@ -127,6 +135,8 @@
   },
   "experience": {
     "title": "Experience",
+    "show_details": "Show",
+    "hide_details": "Hide",
     "items": {
       "unizar": {
         "organization": "Universidad de Zaragoza",

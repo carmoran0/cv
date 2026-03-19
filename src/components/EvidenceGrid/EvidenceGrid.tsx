@@ -11,6 +11,9 @@ interface EvidenceGridProps {
 const EvidenceGrid: React.FC<EvidenceGridProps> = ({ activeSkills }) => {
   const { t, i18n } = useTranslation();
   const hasActiveFilter = activeSkills.length > 0;
+  const highlightedCount = evidenceItems.filter((item) =>
+    !hasActiveFilter || item.skills.some((s) => activeSkills.includes(s))
+  ).length;
 
   return (
     <div>
@@ -43,6 +46,22 @@ const EvidenceGrid: React.FC<EvidenceGridProps> = ({ activeSkills }) => {
           );
         })}
       </div>
+
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={`evidence-counter-${i18n.language}-${highlightedCount}`}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.2 }}
+          className="mt-4 text-xs text-text-secondary"
+        >
+          {t("evidence.counter", {
+            visible: highlightedCount,
+            total: evidenceItems.length,
+          })}
+        </motion.p>
+      </AnimatePresence>
     </div>
   );
 };

@@ -1,6 +1,13 @@
 {
   "hero": {
-    "subtitle": "Estudiante de Ingeniería de Datos · Unizar"
+    "subtitle": "Estudiante de Ingeniería de Datos · Unizar",
+    "availability_badge": "Disponible para prácticas"
+  },
+  "mobile_notice": {
+    "title": "Vista móvil activa",
+    "text": "Este CV se visualiza mejor en ordenador para ver todos los detalles.",
+    "close": "Cerrar",
+    "close_aria": "Cerrar aviso de mejor visualización en ordenador"
   },
   "topbar": {
     "available": "Disponible para prácticas →",
@@ -56,6 +63,7 @@
     "learned": "Aprendido",
     "stack": "Stack",
     "university": "Proyecto universitario",
+    "counter": "Mostrando {{visible}} de {{total}} evidencias",
     "items": {
       "etl_pipeline": {
         "title": "Pipeline ETL — Datos de Ventas",
@@ -127,6 +135,8 @@
   },
   "experience": {
     "title": "Experiencia",
+    "show_details": "Ver",
+    "hide_details": "Ocultar",
     "items": {
       "unizar": {
         "organization": "Universidad de Zaragoza",
