@@ -61,12 +61,31 @@ const projectIcons: Record<string, React.ReactNode> = {
   firefox_extension: <PuzzlePieceIcon />,
 };
 
+type ProjectStatus = "production" | "demo" | "learning";
+
+const featuredProjects: Record<string, { status: ProjectStatus; score: number }> = {
+  firefox_extension: { status: "production", score: 3 },
+  cv_website: { status: "demo", score: 2 },
+  sensor_cloud_discord: { status: "demo", score: 1 },
+};
+
+const projectStatusClasses: Record<ProjectStatus, string> = {
+  production: "border-emerald-400/40 bg-emerald-400/15 text-emerald-300",
+  demo: "border-sky-400/40 bg-sky-400/15 text-sky-300",
+  learning: "border-amber-400/40 bg-amber-400/15 text-amber-300",
+};
+
 const ProjectsSection: React.FC = () => {
   const { t } = useTranslation();
+  const sortedProjects = [...projectItems].sort((a, b) => {
+    const scoreA = featuredProjects[a.id]?.score ?? 0;
+    const scoreB = featuredProjects[b.id]?.score ?? 0;
+    return scoreB - scoreA;
+  });
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-      {projectItems.map((project, idx) => (
+      {sortedProjects.map((project, idx) => (
         <ProjectCard key={project.id} project={project} index={idx} t={t} />
       ))}
     </div>
@@ -80,6 +99,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, t }) => {
+  const projectMeta = featuredProjects[project.id];
+  const projectStatus = projectMeta?.status ?? "learning";
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 14 }}
@@ -93,6 +115,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, t }) => {
           {projectIcons[project.id]}
         </span>
         <div className="flex-1">
+          {projectMeta && (
+            <div className="mb-2">
+              <span
+                className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${projectStatusClasses[projectStatus]}`}
+              >
+                {t("projects.top_badge")}: {t(`projects.status.${projectStatus}`)}
+              </span>
+            </div>
+          )}
           <h3 className="text-sm md:text-base font-semibold text-text-primary leading-snug">
             {t(project.titleKey)}
           </h3>

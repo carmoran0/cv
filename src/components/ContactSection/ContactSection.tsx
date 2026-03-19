@@ -54,6 +54,28 @@ const ContactSection: React.FC = () => {
 
   return (
     <div id="contact" className="max-w-lg">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="mb-4 rounded-xl border border-accent/35 bg-gradient-to-r from-accent/20 via-accent-green/10 to-transparent p-4"
+      >
+        <p className="text-xs font-semibold uppercase tracking-wider text-text-primary">
+          {t("contact.cta_title")}
+        </p>
+        <p className="mt-1 text-xs text-text-secondary leading-relaxed">
+          {t("contact.cta_text")}
+        </p>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          <span className="inline-flex items-center rounded-full border border-border/80 bg-surface/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-text-primary">
+            {t("contact.availability")}
+          </span>
+          <span className="inline-flex items-center rounded-full border border-border/80 bg-surface/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-text-primary">
+            {t("contact.response_time")}
+          </span>
+        </div>
+      </motion.div>
+
       <AnimatePresence mode="wait">
         <motion.h2
           key={`contact-title-${i18n.language}`}
@@ -106,6 +128,13 @@ const ContactSection: React.FC = () => {
           {t("contact.preferred")}
         </motion.p>
       </AnimatePresence>
+
+      <a
+        href={`mailto:${emailAddress}`}
+        className="mt-4 inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-bg hover:opacity-90 transition-opacity"
+      >
+        {t("contact.cta_action")}
+      </a>
 
     </div>
   );

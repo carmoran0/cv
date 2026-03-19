@@ -1,7 +1,12 @@
 {
   "hero": {
     "subtitle": "Data Engineering student · Unizar",
-    "availability_badge": "Open to internships"
+    "availability_badge": "Open to immediate internships",
+    "impact_1": "1 extension used daily (5 users/day)",
+    "impact_2": "Real stack: data, backend and visualization",
+    "impact_3": "Active Data/Cloud certifications",
+    "cta_evidence": "See key proof",
+    "cta_contact": "Contact now"
   },
   "mobile_notice": {
     "title": "Viewing recommendation",
@@ -170,6 +175,12 @@
   },
   "projects": {
     "title": "Projects",
+    "top_badge": "Top project",
+    "status": {
+      "production": "Production",
+      "demo": "Demo",
+      "learning": "Learning"
+    },
     "items": {
       "microsystems_programming": {
         "title": "Microsystems programming",
@@ -207,6 +218,11 @@
   },
   "contact": {
     "title": "Contact",
+    "cta_title": "Available for interview and technical challenge",
+    "cta_text": "If I fit your profile, I can share extra proof and propose an initial plan.",
+    "cta_action": "Send message",
+    "availability": "Immediate availability",
+    "response_time": "Typical reply < 24h",
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",

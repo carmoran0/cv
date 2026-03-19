@@ -1,7 +1,12 @@
 {
   "hero": {
     "subtitle": "Estudiante de Ingeniería de Datos · Unizar",
-    "availability_badge": "Disponible para prácticas"
+    "availability_badge": "Disponible para prácticas inmediatas",
+    "impact_1": "1 extensión en uso diario (5 usuarios/día)",
+    "impact_2": "Stack real: datos, backend y visualización",
+    "impact_3": "Certificaciones activas en Data/Cloud",
+    "cta_evidence": "Ver pruebas clave",
+    "cta_contact": "Contactar ahora"
   },
   "mobile_notice": {
     "title": "Recomendación de visualización",
@@ -170,6 +175,12 @@
   },
   "projects": {
     "title": "Proyectos",
+    "top_badge": "Top proyecto",
+    "status": {
+      "production": "Producción",
+      "demo": "Demo",
+      "learning": "Aprendizaje"
+    },
     "items": {
       "microsystems_programming": {
         "title": "Programación de microsistemas",
@@ -207,6 +218,11 @@
   },
   "contact": {
     "title": "Contacto",
+    "cta_title": "Disponible para entrevista y prueba técnica",
+    "cta_text": "Si encajo con el perfil que buscáis, puedo compartir más evidencias y plantear una propuesta inicial.",
+    "cta_action": "Enviar mensaje",
+    "availability": "Disponibilidad inmediata",
+    "response_time": "Respuesta habitual < 24h",
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
