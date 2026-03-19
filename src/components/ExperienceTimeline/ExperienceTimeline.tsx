@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExperienceItem } from "../../types";
 import { experienceItems } from "../../data/cv";
+import BorderGlow from "../ui/BorderGlow";
 
 const tagColors: Record<string, string> = {
   universidad: "bg-blue-500/20 text-blue-400 border-blue-500/30",
@@ -172,6 +173,63 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
   t,
 }) => {
   const hasDescription = !!item.descriptionKey;
+  const cardBody = (
+    <>
+      <div className="flex items-center gap-2 mb-2">
+        {item.logoUrl ? (
+          <img
+            src={item.logoUrl}
+            alt=""
+            className="w-7 h-7 rounded-md object-contain bg-white/10 shrink-0"
+          />
+        ) : (
+          <span className="text-xl">{item.icon}</span>
+        )}
+        <span className="text-[10px] font-mono text-text-secondary whitespace-nowrap">
+          {t(item.periodKey).split("·")[0].trim()}
+        </span>
+      </div>
+
+      <div className="flex-grow flex flex-col">
+        <h3 className="text-sm font-semibold text-text-primary leading-snug mb-1">
+          {t(item.roleKey)}
+        </h3>
+        <p className="text-xs text-text-secondary leading-tight">
+          {t(item.organizationKey)}
+        </p>
+      </div>
+
+      <div className="mt-auto">
+        {item.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1 mb-2">
+            {item.tags.map((tag) => (
+              <span
+                key={tag}
+                className={`text-[10px] px-1.5 py-0.5 rounded-full border font-medium uppercase tracking-wider ${
+                  tagColors[tag] || "bg-accent/10 text-accent border-accent/30"
+                }`}
+              >
+                {t(`experience.tags.${tag}`)}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {item.locationKey && (
+          <span className="inline-block mb-2 text-[10px] px-1.5 py-0.5 rounded-full bg-surface border border-border text-text-secondary">
+            {t(item.locationKey)}
+          </span>
+        )}
+
+        {hasDescription && (
+          <div className="flex items-center gap-1 text-[10px] text-accent/70">
+            <span>{isSelected ? "▲" : "▼"}</span>
+            <span className="font-medium">{isSelected ? t("experience.hide_details") : t("experience.show_details")}</span>
+          </div>
+        )}
+      </div>
+    </>
+  );
 
   return (
     <motion.div
@@ -183,73 +241,37 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
       className="relative flex min-w-[160px] sm:min-w-[180px] md:min-w-[200px] flex-col items-center"
     >
       {/* Card above the line */}
-      <motion.div
-        layout
-        whileHover={{ y: -4 }}
-        onClick={hasDescription ? onSelect : undefined}
-        className={`w-[150px] sm:w-[170px] md:w-[180px] h-[200px] rounded-xl border p-3 md:p-4 mb-4 transition-all flex flex-col ${
-          isSelected
-            ? "border-accent bg-gradient-to-b from-accent/25 to-surface shadow-[0_0_20px_rgba(0,229,160,0.22)]"
-            : "border-border bg-surface/60 hover:border-accent/40 hover:bg-surface/85"
-        } ${hasDescription ? "cursor-pointer" : ""}`}
-      >
-
-        <div className="flex items-center gap-2 mb-2">
-          {item.logoUrl ? (
-            <img
-              src={item.logoUrl}
-              alt=""
-              className="w-7 h-7 rounded-md object-contain bg-white/10 shrink-0"
-            />
-          ) : (
-            <span className="text-xl">{item.icon}</span>
-          )}
-          <span className="text-[10px] font-mono text-text-secondary whitespace-nowrap">
-            {t(item.periodKey).split("·")[0].trim()}
-          </span>
-        </div>
-
-        <div className="flex-grow flex flex-col">
-          <h3 className="text-sm font-semibold text-text-primary leading-snug mb-1">
-            {t(item.roleKey)}
-          </h3>
-          <p className="text-xs text-text-secondary leading-tight">
-            {t(item.organizationKey)}
-          </p>
-        </div>
-
-        {/* Tags */}
-        <div className="mt-auto">
-          {item.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1 mb-2">
-              {item.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className={`text-[10px] px-1.5 py-0.5 rounded-full border font-medium uppercase tracking-wider ${
-                    tagColors[tag] || "bg-accent/10 text-accent border-accent/30"
-                  }`}
-                >
-                  {t(`experience.tags.${tag}`)}
-                </span>
-              ))}
+      <motion.div layout whileHover={{ y: -4 }} className="mb-4">
+        {isSelected ? (
+          <BorderGlow
+            edgeSensitivity={28}
+            glowColor="155 100 45"
+            backgroundColor="#111118"
+            borderRadius={12}
+            glowRadius={28}
+            glowIntensity={0.95}
+            coneSpread={24}
+            animated={false}
+            colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
+            className={`w-[150px] sm:w-[170px] md:w-[180px] h-[200px] rounded-xl border-accent/60 transition-all ${hasDescription ? "cursor-pointer" : ""}`}
+          >
+            <div
+              onClick={hasDescription ? onSelect : undefined}
+              className="w-full h-full rounded-xl bg-gradient-to-b from-accent/25 to-surface p-3 md:p-4 flex flex-col"
+            >
+              {cardBody}
             </div>
-          )}
-
-          {/* Location badge */}
-          {item.locationKey && (
-            <span className="inline-block mb-2 text-[10px] px-1.5 py-0.5 rounded-full bg-surface border border-border text-text-secondary">
-              {t(item.locationKey)}
-            </span>
-          )}
-
-          {/* Click indicator */}
-          {hasDescription && (
-            <div className="flex items-center gap-1 text-[10px] text-accent/70">
-              <span>{isSelected ? "▲" : "▼"}</span>
-              <span className="font-medium">{isSelected ? t("experience.hide_details") : t("experience.show_details")}</span>
-            </div>
-          )}
-        </div>
+          </BorderGlow>
+        ) : (
+          <div
+            onClick={hasDescription ? onSelect : undefined}
+            className={`w-[150px] sm:w-[170px] md:w-[180px] h-[200px] rounded-xl border p-3 md:p-4 transition-all flex flex-col border-border bg-surface/60 hover:border-accent/40 hover:bg-surface/85 ${
+              hasDescription ? "cursor-pointer" : ""
+            }`}
+          >
+            {cardBody}
+          </div>
+        )}
       </motion.div>
 
       {/* Timeline dot */}

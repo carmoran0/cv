@@ -1,7 +1,7 @@
 {
   "hero": {
     "subtitle": "Estudiante de Ingeniería de Datos · Unizar",
-    "availability_badge": "Disponible para prácticas inmediatas",
+    "availability_badge": "Disponible para prácticas",
     "impact_1": "1 extensión en uso diario (5 usuarios/día)",
     "impact_2": "Stack real: datos, backend y visualización",
     "impact_3": "Certificaciones activas en Data/Cloud",
@@ -221,7 +221,7 @@
     "cta_title": "Disponible para entrevista y prueba técnica",
     "cta_text": "Si encajo con el perfil que buscáis, puedo compartir más evidencias y plantear una propuesta inicial.",
     "cta_action": "Enviar mensaje",
-    "availability": "Disponibilidad inmediata",
+    "availability": "Disponibilidad",
     "response_time": "Respuesta habitual < 24h",
     "email": "Email",
     "linkedin": "LinkedIn",

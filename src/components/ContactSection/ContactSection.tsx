@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { contactData } from "../../data/cv";
+import BorderGlow from "../ui/BorderGlow";
 
 const EmailIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -58,22 +59,37 @@ const ContactSection: React.FC = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="mb-4 rounded-xl border border-accent/35 bg-gradient-to-r from-accent/20 via-accent-green/10 to-transparent p-4"
+        className="mb-4"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-text-primary">
-          {t("contact.cta_title")}
-        </p>
-        <p className="mt-1 text-xs text-text-secondary leading-relaxed">
-          {t("contact.cta_text")}
-        </p>
-        <div className="mt-2 flex flex-wrap gap-1.5">
-          <span className="inline-flex items-center rounded-full border border-border/80 bg-surface/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-text-primary">
-            {t("contact.availability")}
-          </span>
-          <span className="inline-flex items-center rounded-full border border-border/80 bg-surface/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-text-primary">
-            {t("contact.response_time")}
-          </span>
-        </div>
+        <BorderGlow
+          edgeSensitivity={28}
+          glowColor="155 100 45"
+          backgroundColor="#111118"
+          borderRadius={12}
+          glowRadius={22}
+          glowIntensity={0.6}
+          coneSpread={24}
+          animated={false}
+          colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
+          className="rounded-xl border-accent/35"
+        >
+          <div className="rounded-xl bg-gradient-to-r from-accent/20 via-accent-green/10 to-transparent p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-text-primary">
+              {t("contact.cta_title")}
+            </p>
+            <p className="mt-1 text-xs text-text-secondary leading-relaxed">
+              {t("contact.cta_text")}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              <span className="inline-flex items-center rounded-full border border-border/80 bg-surface/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-text-primary">
+                {t("contact.availability")}
+              </span>
+              <span className="inline-flex items-center rounded-full border border-border/80 bg-surface/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-text-primary">
+                {t("contact.response_time")}
+              </span>
+            </div>
+          </div>
+        </BorderGlow>
       </motion.div>
 
       <AnimatePresence mode="wait">

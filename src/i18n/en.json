@@ -1,7 +1,7 @@
 {
   "hero": {
     "subtitle": "Data Engineering student · Unizar",
-    "availability_badge": "Open to immediate internships",
+    "availability_badge": "Open to internships",
     "impact_1": "1 extension used daily (5 users/day)",
     "impact_2": "Real stack: data, backend and visualization",
     "impact_3": "Active Data/Cloud certifications",
@@ -221,7 +221,7 @@
     "cta_title": "Available for interview and technical challenge",
     "cta_text": "If I fit your profile, I can share extra proof and propose an initial plan.",
     "cta_action": "Send message",
-    "availability": "Immediate availability",
+    "availability": "Immediate",
     "response_time": "Typical reply < 24h",
     "email": "Email",
     "linkedin": "LinkedIn",

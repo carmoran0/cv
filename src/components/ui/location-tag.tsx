@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import BorderGlow from "./BorderGlow";
 
 interface LocationTagProps {
   city?: string;
@@ -31,62 +32,72 @@ export function LocationTag({
   }, []);
 
   return (
-    <button
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="group relative flex items-center gap-3 rounded-full border border-border/60 bg-surface/50 px-4 py-2.5 transition-all duration-500 ease-out hover:border-text-primary/20 hover:bg-surface/80 hover:shadow-[0_0_20px_rgba(0,0,0,0.04)]"
+    <BorderGlow
+      edgeSensitivity={32}
+      glowColor="155 100 45"
+      backgroundColor="#111118"
+      borderRadius={999}
+      glowRadius={18}
+      glowIntensity={0.45}
+      coneSpread={24}
+      animated={false}
+      colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
+      className="rounded-full border-border/60"
     >
-      {/* Live pulse indicator */}
-      <div className="relative flex items-center justify-center">
-        <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-        </span>
-      </div>
-
-      {/* Location text */}
-      <div className="flex items-center gap-2 overflow-hidden">
-        <span
-          className="text-sm font-medium text-text-primary transition-all duration-500"
-          style={{
-            transform: isHovered ? "translateY(-100%)" : "translateY(0)",
-            opacity: isHovered ? 0 : 1,
-          }}
-        >
-          {city}, {country}
-        </span>
-
-        <span
-          className="absolute left-11 text-sm font-medium text-text-primary transition-all duration-500"
-          style={{
-            transform: isHovered ? "translateY(0)" : "translateY(100%)",
-            opacity: isHovered ? 1 : 0,
-          }}
-        >
-          {currentTime} {timezone}
-        </span>
-      </div>
-
-      {/* Arrow indicator */}
-      <svg
-        className="h-3 w-3 text-text-secondary transition-all duration-300"
-        style={{
-          transform: isHovered
-            ? "translateX(2px) rotate(-45deg)"
-            : "translateX(0) rotate(0)",
-          opacity: isHovered ? 1 : 0.5,
-        }}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
+      <button
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="group relative flex items-center gap-3 rounded-full border border-transparent bg-surface/50 px-4 py-2.5 transition-all duration-500 ease-out hover:bg-surface/80"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-        />
-      </svg>
-    </button>
+        <div className="relative flex items-center justify-center">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2 overflow-hidden">
+          <span
+            className="text-sm font-medium text-text-primary transition-all duration-500"
+            style={{
+              transform: isHovered ? "translateY(-100%)" : "translateY(0)",
+              opacity: isHovered ? 0 : 1,
+            }}
+          >
+            {city}, {country}
+          </span>
+
+          <span
+            className="absolute left-11 text-sm font-medium text-text-primary transition-all duration-500"
+            style={{
+              transform: isHovered ? "translateY(0)" : "translateY(100%)",
+              opacity: isHovered ? 1 : 0,
+            }}
+          >
+            {currentTime} {timezone}
+          </span>
+        </div>
+
+        <svg
+          className="h-3 w-3 text-text-secondary transition-all duration-300"
+          style={{
+            transform: isHovered
+              ? "translateX(2px) rotate(-45deg)"
+              : "translateX(0) rotate(0)",
+            opacity: isHovered ? 1 : 0.5,
+          }}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+          />
+        </svg>
+      </button>
+    </BorderGlow>
   );
 }

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { skillItems } from "../../data/cv";
 import { useMode } from "../../context/ModeContext";
+import BorderGlow from "../ui/BorderGlow";
 
 interface SkillsFilterProps {
   activeSkills: string[];
@@ -31,30 +32,54 @@ const SkillsFilter: React.FC<SkillsFilterProps> = ({ activeSkills, onToggleSkill
       <div className="flex flex-wrap gap-2">
         {skillItems.map((skill) => {
           const isActive = activeSkills.includes(skill.id);
+          const label = (
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`skill-${skill.id}-${i18n.language}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+              >
+                {t(skill.labelKey)}
+              </motion.span>
+            </AnimatePresence>
+          );
+
           return (
             <motion.div key={skill.id} layout>
-              <motion.button
-                onClick={() => onToggleSkill(skill.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-3 py-1.5 rounded-lg font-sans text-xs font-medium border transition-all duration-200 ${
-                  isActive
-                    ? "bg-accent/20 text-accent border-accent/40 shadow-md shadow-accent/10"
-                    : "bg-surface text-text-secondary border-border hover:border-accent/20 hover:text-text-primary"
-                }`}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={`skill-${skill.id}-${i18n.language}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.15 }}
+              {isActive ? (
+                <BorderGlow
+                  edgeSensitivity={30}
+                  glowColor="155 100 45"
+                  backgroundColor="#111118"
+                  borderRadius={8}
+                  glowRadius={18}
+                  glowIntensity={0.7}
+                  coneSpread={25}
+                  animated={false}
+                  colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
+                  className="rounded-lg border-accent/40"
+                >
+                  <motion.button
+                    onClick={() => onToggleSkill(skill.id)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-3 py-1.5 rounded-lg font-sans text-xs font-medium border border-transparent bg-accent/20 text-accent transition-all duration-200"
                   >
-                    {t(skill.labelKey)}
-                  </motion.span>
-                </AnimatePresence>
-              </motion.button>
+                    {label}
+                  </motion.button>
+                </BorderGlow>
+              ) : (
+                <motion.button
+                  onClick={() => onToggleSkill(skill.id)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-3 py-1.5 rounded-lg font-sans text-xs font-medium border transition-all duration-200 bg-surface text-text-secondary border-border hover:border-accent/20 hover:text-text-primary"
+                >
+                  {label}
+                </motion.button>
+              )}
 
               {/* Technical mode: expanded note */}
               <AnimatePresence>
