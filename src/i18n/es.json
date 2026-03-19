@@ -4,8 +4,8 @@
     "availability_badge": "Disponible para prácticas"
   },
   "mobile_notice": {
-    "title": "Vista móvil activa",
-    "text": "Este CV se visualiza mejor en ordenador para ver todos los detalles.",
+    "title": "Recomendación de visualización",
+    "text": "Para ver el CV completo con mejor detalle, ábrelo desde un ordenador.",
     "close": "Cerrar",
     "close_aria": "Cerrar aviso de mejor visualización en ordenador"
   },

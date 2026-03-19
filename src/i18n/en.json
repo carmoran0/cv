@@ -4,8 +4,8 @@
     "availability_badge": "Open to internships"
   },
   "mobile_notice": {
-    "title": "Mobile view active",
-    "text": "This CV is best experienced on desktop to see all details.",
+    "title": "Viewing recommendation",
+    "text": "For the full CV experience with better detail, open it on desktop.",
     "close": "Close",
     "close_aria": "Close desktop recommendation notice"
   },

@@ -31,7 +31,8 @@ const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.35 }}
-          className="inline-flex items-center gap-2 rounded-full border border-accent/35 bg-gradient-to-r from-accent/25 via-accent-green/10 to-transparent px-4 py-1.5"
+          whileHover={{ y: -1 }}
+          className="inline-flex items-center gap-2 rounded-full border border-accent/45 bg-gradient-to-r from-accent/30 via-accent-green/15 to-transparent px-4 py-1.5 shadow-[0_0_14px_rgba(0,229,160,0.12)]"
         >
           <span className="h-2 w-2 rounded-full bg-accent-green animate-pulse" />
           <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-text-primary">

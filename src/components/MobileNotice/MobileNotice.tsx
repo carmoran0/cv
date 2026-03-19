@@ -51,24 +51,24 @@ const MobileNotice: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -12, opacity: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="md:hidden px-4 py-2 border-b border-accent/35 bg-gradient-to-r from-accent/20 via-accent-green/10 to-transparent"
+          className="md:hidden px-4 py-2.5 border-b border-accent/40 bg-gradient-to-r from-accent/30 via-accent-green/15 to-transparent"
           role="status"
           aria-live="polite"
         >
           <div className="flex items-start gap-3">
-            <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-accent-green animate-pulse" />
+            <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-accent-green animate-pulse" />
             <div className="flex-1 min-w-0">
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-accent-green">
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-text-primary">
                 {t("mobile_notice.title")}
               </p>
-              <p className="text-xs leading-snug text-text-secondary">
+              <p className="text-xs leading-snug text-text-secondary/95 mt-0.5">
                 {t("mobile_notice.text")}
               </p>
             </div>
             <button
               type="button"
               onClick={handleDismiss}
-              className="shrink-0 rounded-md border border-border px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-text-secondary hover:text-text-primary hover:border-accent/40 transition-colors"
+              className="shrink-0 rounded-md border border-border/90 bg-bg/65 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-text-secondary hover:text-text-primary hover:border-accent/50 transition-colors"
               aria-label={t("mobile_notice.close_aria")}
             >
               {t("mobile_notice.close")}
