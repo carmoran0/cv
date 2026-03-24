@@ -185,7 +185,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
         ) : (
           <span className="text-xl">{item.icon}</span>
         )}
-        <span className="text-[10px] font-mono text-text-secondary whitespace-nowrap">
+        <span className="text-[10px] font-mono text-text-secondary leading-tight min-w-0 break-words [overflow-wrap:anywhere]">
           {t(item.periodKey).split("·")[0].trim()}
         </span>
       </div>
