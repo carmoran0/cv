@@ -61,9 +61,9 @@ function App() {
         {/* App content */}
         <div className="relative z-10 flex flex-col min-h-full">
           <TopBar />
-          <MobileNotice />
 
-          <main className="flex-1 overflow-y-auto">
+          <main className="flex-1 overflow-y-auto scroll-smooth scroll-pt-[72px]">
+            <MobileNotice />
             {/* Hero */}
             <HeroSection />
 

@@ -21,6 +21,7 @@ import imgUseDax from "../images/Use DAX in Power BI Desktop_use-dax-in-power-bi
 import imgTransactSql from "../images/get-started-querying-with-transact-sql.svg";
 import imgMongoRelational from "../images/from-relational-model-sql-to-mongodb-s-document-mod-96.webp";
 import imgGenericTrophy from "../images/generic-trophy.svg";
+import imgAwsAcademy from "../images/aws-academy-graduate-cloud-foundations-training-bad.png";
 
 export const kpiItems: KPIItem[] = [];
 
@@ -226,8 +227,8 @@ export const certificationItems: CertificationItem[] = [
     titleKey: "certifications.items.aws_cloud_foundations.title",
     issuerKey: "certifications.items.aws_cloud_foundations.issuer",
     dateKey: "certifications.items.aws_cloud_foundations.date",
-    comingSoon: true,
-    credentialUrl: "",
+    imageSrc: imgAwsAcademy,
+    credentialUrl: "https://www.credly.com/badges/dd3085af-80e1-4913-a538-3e1bbf00dad7/public_url",
   },
     {
     id: "mongodb_python_path",

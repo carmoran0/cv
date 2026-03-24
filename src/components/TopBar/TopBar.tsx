@@ -16,7 +16,7 @@ const TopBar: React.FC = () => {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-6 py-3 bg-surface/90 backdrop-blur-md border-b border-border"
+      className="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-6 py-3 bg-surface/90 backdrop-blur-md border-b border-border"
     >
       {/* Left: Language Toggle */}
       <div className="flex items-center gap-1 bg-bg rounded-lg p-1">

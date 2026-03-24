@@ -52,7 +52,7 @@ const MobileNotice: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -12, opacity: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="md:hidden px-3 py-2"
+          className="md:hidden px-3 py-2 pt-[64px]"
           role="status"
           aria-live="polite"
         >
