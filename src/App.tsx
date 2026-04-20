@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { ModeProvider } from "./context/ModeContext";
 import TopBar from "./components/TopBar/TopBar";
 import MobileNotice from "./components/MobileNotice/MobileNotice";
@@ -10,10 +10,15 @@ import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import CertificationsSection from "./components/CertificationsSection/CertificationsSection";
 import { FlickeringGrid } from "./components/ui/flickering-grid";
 import { LocationTag } from "./components/ui/LocationTag";
-import { ZaragozaMap } from "./components/ui/ZaragozaMap";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import profileImg from "./images/profile.webp";
+
+const LazyZaragozaMap = lazy(() =>
+  import("./components/ui/ZaragozaMap").then((module) => ({
+    default: module.ZaragozaMap,
+  }))
+);
 
 function App() {
   const [isLocationHovered, setIsLocationHovered] = useState(false);
@@ -90,7 +95,9 @@ function App() {
                         transition={{ duration: 0.3 }}
                         className="absolute inset-0 w-full h-full z-20"
                       >
-                        <ZaragozaMap />
+                        <Suspense fallback={null}>
+                          <LazyZaragozaMap />
+                        </Suspense>
                       </motion.div>
                     </div>
 

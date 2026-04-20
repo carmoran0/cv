@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { certificationItems } from "../../data/cv";
@@ -67,17 +67,21 @@ const getCertificationSortValue = (
 const CertificationsSection: React.FC = () => {
   const { t } = useTranslation();
 
-  const groupedCertifications = certificationItems.reduce(
-    (acc, cert) => {
-      const groupKey = resolveCertificationGroup(cert.id, cert.issuerKey);
-      acc[groupKey].push(cert);
-      return acc;
-    },
-    {
-      microsoft: [],
-      amazon: [],
-      others: [],
-    } as Record<CertificationGroupKey, typeof certificationItems>
+  const groupedCertifications = useMemo(
+    () =>
+      certificationItems.reduce(
+        (acc, cert) => {
+          const groupKey = resolveCertificationGroup(cert.id, cert.issuerKey);
+          acc[groupKey].push(cert);
+          return acc;
+        },
+        {
+          microsoft: [],
+          amazon: [],
+          others: [],
+        } as Record<CertificationGroupKey, typeof certificationItems>
+      ),
+    []
   );
 
   return (
@@ -145,7 +149,8 @@ const CertificationsSection: React.FC = () => {
                     {cert.imageSrc ? (
                       <img
                         src={cert.imageSrc}
-                        alt=""
+                        alt={t(cert.titleKey).toString()}
+                        loading="lazy"
                         className={`block h-20 w-20 mb-2 object-contain ${
                           cert.comingSoon ? "opacity-40" : ""
                         }`}
@@ -153,7 +158,8 @@ const CertificationsSection: React.FC = () => {
                     ) : cert.badgeUrl ? (
                       <img
                         src={cert.badgeUrl}
-                        alt=""
+                        alt={t(cert.titleKey).toString()}
+                        loading="lazy"
                         className={`block h-20 w-20 mb-2 object-contain ${
                           cert.comingSoon ? "opacity-40" : ""
                         }`}

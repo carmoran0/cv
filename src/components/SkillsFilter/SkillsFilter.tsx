@@ -16,34 +16,28 @@ const SkillsFilter: React.FC<SkillsFilterProps> = ({ activeSkills, onToggleSkill
 
   return (
     <div>
-      <AnimatePresence mode="wait">
-        <motion.h2
-          key={`skills-title-${i18n.language}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.15 }}
-          className="text-xs font-sans font-semibold tracking-widest text-text-secondary uppercase mb-4"
-        >
-          {t("skills.title")}
-        </motion.h2>
-      </AnimatePresence>
+      <motion.h2
+        key={`skills-title-${i18n.language}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.15 }}
+        className="text-xs font-sans font-semibold tracking-widest text-text-secondary uppercase mb-4"
+      >
+        {t("skills.title")}
+      </motion.h2>
 
       <div className="flex flex-wrap gap-2">
         {skillItems.map((skill) => {
           const isActive = activeSkills.includes(skill.id);
           const label = (
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={`skill-${skill.id}-${i18n.language}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15 }}
-              >
-                {t(skill.labelKey)}
-              </motion.span>
-            </AnimatePresence>
+            <motion.span
+              key={`skill-${skill.id}-${i18n.language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.15 }}
+            >
+              {t(skill.labelKey)}
+            </motion.span>
           );
 
           return (

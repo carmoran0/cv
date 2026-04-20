@@ -1,9 +1,6 @@
 import {
-  KPIItem,
   EvidenceItem,
   SkillItem,
-  ArchitectureNode,
-  SignalItem,
   ExperienceItem,
   CertificationItem,
   ProjectItem,
@@ -25,12 +22,6 @@ import imgAwsAcademy from "../images/aws-academy-graduate-cloud-foundations-trai
 import imgAwsSolutionsArchitect from "../images/saa-badge-resized.15f666ec150fa01aed6d1aa00cce4860a862759b.png";
 import imgMongoCertification from "../images/MONGOcertification.svg";
 import imgClaude from "../images/claude.svg";
-
-export const kpiItems: KPIItem[] = [];
-
-export const architectureNodes: ArchitectureNode[] = [];
-
-export const signalItems: SignalItem[] = [];
 
 export const evidenceItems: EvidenceItem[] = [];
 

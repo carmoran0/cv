@@ -133,7 +133,7 @@ const ExperienceTimeline: React.FC = () => {
                 {selectedItem.logoUrl ? (
                   <img
                     src={selectedItem.logoUrl}
-                    alt=""
+                    alt={t(selectedItem.organizationKey).toString()}
                     className="w-6 h-6 rounded-md object-contain bg-white/10 shrink-0"
                   />
                 ) : (
@@ -179,7 +179,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
         {item.logoUrl ? (
           <img
             src={item.logoUrl}
-            alt=""
+            alt={t(item.organizationKey).toString()}
             className="w-7 h-7 rounded-md object-contain bg-white/10 shrink-0"
           />
         ) : (

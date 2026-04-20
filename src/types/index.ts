@@ -2,13 +2,6 @@ export type Mode = "recruiter" | "technical";
 
 export type Section = "overview" | "evidence" | "skills" | "about" | "contact";
 
-export interface KPIItem {
-  id: string;
-  labelKey: string;
-  valueKey: string;
-  type: "status" | "info";
-}
-
 export interface EvidenceItem {
   id: string;
   icon: string;
@@ -26,18 +19,6 @@ export interface SkillItem {
   labelKey: string;
   noteKey: string;
   relatedEvidence: string[];
-}
-
-export interface ArchitectureNode {
-  id: string;
-  labelKey: string;
-  toolsKey: string;
-}
-
-export interface SignalItem {
-  id: string;
-  textKey: string;
-  icon: string;
 }
 
 export interface ExperienceItem {
