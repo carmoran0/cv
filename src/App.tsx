@@ -7,6 +7,7 @@ import AboutSection from "./components/AboutSection/AboutSection";
 import ContactSection from "./components/ContactSection/ContactSection";
 import ExperienceTimeline from "./components/ExperienceTimeline/ExperienceTimeline";
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
+import GitHubSection from "./components/GitHubSection/GitHubSection";
 import CertificationsSection from "./components/CertificationsSection/CertificationsSection";
 import { FlickeringGrid } from "./components/ui/flickering-grid";
 import { LocationTag } from "./components/ui/LocationTag";
@@ -21,23 +22,12 @@ const LazyZaragozaMap = lazy(() =>
 );
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [isLocationHovered, setIsLocationHovered] = useState(false);
 
   useEffect(() => {
-    const titles = ["Currículum", "Carlos Moreno"];
-    let index = 0;
-
-    document.title = titles[index];
-
-    const intervalId = window.setInterval(() => {
-      index = (index + 1) % titles.length;
-      document.title = titles[index];
-    }, 4000);
-
-    return () => {
-      window.clearInterval(intervalId);
-    };
-  }, []);
+    document.title = t("app.title");
+  }, [i18n.language, t]);
 
   // Auto-hide mapa después de 2.5 segundos
   useEffect(() => {
@@ -84,7 +74,7 @@ function App() {
                       {/* Base profile image */}
                       <img
                         src={profileImg}
-                        alt="Carlos Moreno"
+                        alt={t("app.profile_alt")}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
 
@@ -126,6 +116,9 @@ function App() {
               <SectionHeading titleKey="projects.title" />
               <ProjectsSection />
             </section>
+
+            {/* GitHub */}
+            <GitHubSection />
 
             {/* Certifications */}
             <section id="certifications" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">

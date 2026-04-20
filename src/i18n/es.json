@@ -18,7 +18,38 @@
     "available": "Disponible para prácticas →",
     "recruiter": "Reclutador",
     "technical": "Técnico",
-    "download_cv": "Descargar CV"
+    "download_cv": "Descargar CV",
+    "switch_to_es": "Cambiar a español",
+    "switch_to_en": "Cambiar a inglés",
+    "download_cv_aria": "Descargar CV"
+  },
+  "app": {
+    "title": "Currículum · Carlos Moreno",
+    "profile_alt": "Retrato de Carlos Moreno"
+  },
+  "github": {
+    "title": "Actividad en GitHub",
+    "subtitle": "Vista en vivo de repositorios destacados y estadísticas del perfil, con caché local para ir rápido.",
+    "profile": "Perfil",
+    "repos": "Repositorios destacados",
+    "open_profile": "Abrir perfil",
+    "open_repo": "Abrir repo",
+    "retry": "Reintentar",
+    "error": "No se pudieron cargar los datos de GitHub ahora mismo.",
+    "cached_warning": "Se muestran datos en caché porque falló la petición en vivo.",
+    "cached_fresh": "Datos en vivo",
+    "cached_stale": "Datos en caché",
+    "updated": "Actualizado",
+    "none": "N/D",
+    "no_description": "Sin descripción disponible.",
+    "stats": {
+      "followers": "Seguidores",
+      "repos": "Repos",
+      "stars": "Estrellas",
+      "forks": "Forks",
+      "top_language": "Lenguaje principal"
+    },
+    "contributions": "Contribuciones"
   },
   "sidebar": {
     "overview": "Resumen",
@@ -123,14 +154,38 @@
   "skills": {
     "title": "Habilidades",
     "items": {
-      "sql": { "label": "SQL", "note": "PostgreSQL, consultas complejas, funciones de ventana, optimización" },
-      "nosql": { "label": "NoSQL / MongoDB", "note": "Modelado de documentos, pipelines de agregación, Atlas" },
-      "etl": { "label": "ETL/ELT", "note": "Diseño de pipelines, calidad de datos, planificación, errores" },
-      "dashboards": { "label": "Dashboards", "note": "Power BI, diseño de KPIs, reporting interactivo" },
-      "apis": { "label": "APIs", "note": "Diseño REST, Express/Node.js, autenticación, documentación" },
-      "python": { "label": "Python", "note": "Pandas, scripting, procesamiento de datos, automatización" },
-      "design": { "label": "UI / Diseño", "note": "Figma, Photoshop, Illustrator — 2 años freelance" },
-      "docker": { "label": "Docker (aprendiendo)", "note": "Contenedores, docker-compose, entornos de dev" }
+      "sql": {
+        "label": "SQL",
+        "note": "PostgreSQL, consultas complejas, funciones de ventana, optimización"
+      },
+      "nosql": {
+        "label": "NoSQL / MongoDB",
+        "note": "Modelado de documentos, pipelines de agregación, Atlas"
+      },
+      "etl": {
+        "label": "ETL/ELT",
+        "note": "Diseño de pipelines, calidad de datos, planificación, errores"
+      },
+      "dashboards": {
+        "label": "Dashboards",
+        "note": "Power BI, diseño de KPIs, reporting interactivo"
+      },
+      "apis": {
+        "label": "APIs",
+        "note": "Diseño REST, Express/Node.js, autenticación, documentación"
+      },
+      "python": {
+        "label": "Python",
+        "note": "Pandas, scripting, procesamiento de datos, automatización"
+      },
+      "design": {
+        "label": "UI / Diseño",
+        "note": "Figma, Photoshop, Illustrator — 2 años freelance"
+      },
+      "docker": {
+        "label": "Docker (aprendiendo)",
+        "note": "Contenedores, docker-compose, entornos de dev"
+      }
     }
   },
   "about": {
@@ -223,7 +278,7 @@
   },
   "contact": {
     "title": "Contacto",
-    "cta_title": "Disponible para entrevista y prueba técnica",
+    "cta_title": "Disponible para entrevista",
     "cta_text": "Si encajo con el perfil que buscáis, puedo compartir más evidencias y plantear una propuesta inicial.",
     "cta_action": "Enviar mensaje",
     "availability": "Disponibilidad",

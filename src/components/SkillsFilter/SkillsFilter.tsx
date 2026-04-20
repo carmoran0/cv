@@ -56,20 +56,26 @@ const SkillsFilter: React.FC<SkillsFilterProps> = ({ activeSkills, onToggleSkill
                   className="rounded-lg border-accent/40"
                 >
                   <motion.button
+                    type="button"
                     onClick={() => onToggleSkill(skill.id)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-3 py-1.5 rounded-lg font-sans text-xs font-medium border border-transparent bg-accent/20 text-accent transition-all duration-200"
+                    aria-pressed={isActive}
+                    aria-label={t(skill.labelKey)}
+                    className="px-3 py-1.5 rounded-lg font-sans text-xs font-medium border border-transparent bg-accent/20 text-accent transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                   >
                     {label}
                   </motion.button>
                 </BorderGlow>
               ) : (
                 <motion.button
+                  type="button"
                   onClick={() => onToggleSkill(skill.id)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-3 py-1.5 rounded-lg font-sans text-xs font-medium border transition-all duration-200 bg-surface text-text-secondary border-border hover:border-accent/20 hover:text-text-primary"
+                  aria-pressed={isActive}
+                  aria-label={t(skill.labelKey)}
+                  className="px-3 py-1.5 rounded-lg font-sans text-xs font-medium border transition-all duration-200 bg-surface text-text-secondary border-border hover:border-accent/20 hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                 >
                   {label}
                 </motion.button>
