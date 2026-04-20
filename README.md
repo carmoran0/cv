@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# Carlos Moreno CV
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal CV website built with React, TypeScript, Tailwind CSS, and i18next.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- **Frontend:** React 19 + TypeScript
+- **Build tool:** Vite 8
+- **Styling:** Tailwind CSS 3 + PostCSS + Autoprefixer
+- **i18n:** i18next + react-i18next
+- **Testing:** Vitest + Testing Library
+- **Deploy:** GitHub Pages (`gh-pages` branch)
 
-### `npm start`
+## Compatibility baseline
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Node.js:** `20.19.0` (LTS baseline used in CI)
+- **npm:** `10.x`
+- **OS for local development:** macOS, Linux, or Windows (WSL recommended)
+- **Browser targets:**
+  - Production: `>0.2%`, `not dead`, `not op_mini all`
+  - Development: last 1 Chrome/Firefox/Safari
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Local development
 
-### `npm test`
+```bash
+npm ci
+npm run dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open `http://localhost:5173`.
 
-### `npm run build`
+## Quality checks
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run test
+npm run build
+npm run typecheck
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- CI validates install, test, and build on PRs and pushes.
+- Deploy workflow runs on `main` and publishes `dist/` to GitHub Pages.
 
-### `npm run eject`
+Manual deployment (if needed):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm run deploy
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Maintenance policy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Monthly:** dependency update and `npm audit` review.
+- **Quarterly:** tooling/runtime review (Node, Vite, React, test stack).
+- **Ownership:** repository maintainers review and merge upgrade PRs after CI passes.
