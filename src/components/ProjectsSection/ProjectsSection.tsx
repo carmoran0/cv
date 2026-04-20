@@ -64,6 +64,7 @@ const projectIcons: Record<string, React.ReactNode> = {
 type ProjectStatus = "production" | "demo" | "learning";
 
 const featuredProjects: Record<string, { status: ProjectStatus; score: number }> = {
+  the_wave_hackathon_2026: { status: "demo", score: 4 },
   firefox_extension: { status: "production", score: 3 },
   cv_website: { status: "demo", score: 2 },
   sensor_cloud_discord: { status: "demo", score: 1 },
@@ -150,6 +151,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, t }) => {
                   {skill}
                 </span>
               ))}
+            </div>
+          )}
+          {project.repoUrl && (
+            <div className="mt-3">
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md border border-accent/35 bg-accent/10 px-2 py-1 text-[11px] font-medium text-accent hover:bg-accent/20 transition-colors"
+              >
+                {t("projects.view_repo")}
+              </a>
             </div>
           )}
         </div>

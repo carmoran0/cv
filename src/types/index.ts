@@ -73,4 +73,5 @@ export interface ProjectItem {
   descriptionKey: string;
   tags: ProjectTag[];
   skills?: string[];
+  repoUrl?: string;
 }

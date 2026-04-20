@@ -176,12 +176,17 @@
   "projects": {
     "title": "Proyectos",
     "top_badge": "Top proyecto",
+    "view_repo": "Ver repo",
     "status": {
       "production": "Producción",
       "demo": "Demo",
       "learning": "Aprendizaje"
     },
     "items": {
+      "the_wave_hackathon_2026": {
+        "title": "Finalista hackathon The Wave 2026",
+        "description": "Proyecto finalista en The Wave 2026, desarrollado en formato hackathon con enfoque en ejecución rápida y validación de una propuesta funcional."
+      },
       "microsystems_programming": {
         "title": "Programación de microsistemas",
         "description": "Prácticas con ESP32 y Arduino para control y automatización de sistemas pequeños."
@@ -232,6 +237,11 @@
     "title": "Certificaciones",
     "viewCredential": "Ver credencial",
     "comingSoon": "Próximamente",
+    "groups": {
+      "microsoft": "Microsoft",
+      "amazon": "Amazon Web Services",
+      "others": "Otros"
+    },
     "items": {
       "mongodb_relational_model": {
         "title": "From Relational Model (SQL) to MongoDB's Document Model",
@@ -292,6 +302,11 @@
         "title": "AWS Cloud Foundations",
         "issuer": "Amazon Web Services",
         "date": "24/3/2026"
+      },
+      "aws_solutions_architect": {
+        "title": "AWS Solutions Architect",
+        "issuer": "Amazon Web Services",
+        "date": "Próximamente"
       },
       "mongodb_python_path": {
         "title": "MongoDB Python Developer Path",

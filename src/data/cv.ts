@@ -22,6 +22,9 @@ import imgTransactSql from "../images/get-started-querying-with-transact-sql.svg
 import imgMongoRelational from "../images/from-relational-model-sql-to-mongodb-s-document-mod-96.webp";
 import imgGenericTrophy from "../images/generic-trophy.svg";
 import imgAwsAcademy from "../images/aws-academy-graduate-cloud-foundations-training-bad.png";
+import imgAwsSolutionsArchitect from "../images/saa-badge-resized.15f666ec150fa01aed6d1aa00cce4860a862759b.png";
+import imgMongoCertification from "../images/MONGOcertification.svg";
+import imgClaude from "../images/claude.svg";
 
 export const kpiItems: KPIItem[] = [];
 
@@ -90,6 +93,14 @@ export const experienceItems: ExperienceItem[] = [
 ];
 
 export const projectItems: ProjectItem[] = [
+  {
+    id: "the_wave_hackathon_2026",
+    titleKey: "projects.items.the_wave_hackathon_2026.title",
+    descriptionKey: "projects.items.the_wave_hackathon_2026.description",
+    tags: ["UNIVERSIDAD"],
+    skills: ["Hackathon", "Teamwork", "Rapid Prototyping"],
+    repoUrl: "https://github.com/dlopez-uni/the_wave",
+  },
   {
     id: "microsystems_programming",
     titleKey: "projects.items.microsystems_programming.title",
@@ -220,6 +231,7 @@ export const certificationItems: CertificationItem[] = [
     titleKey: "certifications.items.claude_code_in_action.title",
     issuerKey: "certifications.items.claude_code_in_action.issuer",
     dateKey: "certifications.items.claude_code_in_action.date",
+    imageSrc: imgClaude,
     credentialUrl: "https://verify.skilljar.com/c/2egzywwxpdnn",
   },
   {
@@ -230,11 +242,21 @@ export const certificationItems: CertificationItem[] = [
     imageSrc: imgAwsAcademy,
     credentialUrl: "https://www.credly.com/badges/dd3085af-80e1-4913-a538-3e1bbf00dad7/public_url",
   },
+  {
+    id: "aws_solutions_architect",
+    titleKey: "certifications.items.aws_solutions_architect.title",
+    issuerKey: "certifications.items.aws_solutions_architect.issuer",
+    dateKey: "certifications.items.aws_solutions_architect.date",
+    imageSrc: imgAwsSolutionsArchitect,
+    comingSoon: true,
+    credentialUrl: "",
+  },
     {
     id: "mongodb_python_path",
     titleKey: "certifications.items.mongodb_python_path.title",
     issuerKey: "certifications.items.mongodb_python_path.issuer",
     dateKey: "certifications.items.mongodb_python_path.date",
+    imageSrc: imgMongoCertification,
     comingSoon: true,
     credentialUrl: "",
   },
