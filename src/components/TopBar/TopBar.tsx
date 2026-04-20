@@ -45,7 +45,7 @@ const TopBar: React.FC = () => {
       {/* Right: CV Download */}
       <div className="flex items-center gap-3">
         <a
-          href={`${process.env.PUBLIC_URL}/CV2026.pdf`}
+          href={`${import.meta.env.BASE_URL}CV2026.pdf`}
           download="CV2026.pdf"
           className="px-3 py-1.5 rounded-md text-xs font-medium bg-accent text-bg hover:opacity-90 transition-opacity"
         >
