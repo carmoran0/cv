@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useMode } from "../../context/ModeContext";
 
 const AboutSection: React.FC = () => {
@@ -11,7 +11,7 @@ const AboutSection: React.FC = () => {
     <div className="max-w-2xl">
       <div className="p-6 rounded-xl bg-surface border border-border">
         <AnimatePresence mode="wait">
-          <motion.p
+          <m.p
             key={`about-${mode}-${i18n.language}`}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -20,7 +20,7 @@ const AboutSection: React.FC = () => {
             className="text-sm text-text-primary leading-relaxed whitespace-pre-line"
           >
             {t(`about.${mode}`)}
-          </motion.p>
+          </m.p>
         </AnimatePresence>
       </div>
     </div>

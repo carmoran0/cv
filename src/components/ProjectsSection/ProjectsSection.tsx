@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useMemo } from "react";
+import { m } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { projectItems } from "../../data/cv";
 import { ProjectItem, ProjectTag } from "../../types";
@@ -45,11 +45,15 @@ const projectStatusClasses: Record<ProjectStatus, string> = {
 
 const ProjectsSection: React.FC = () => {
   const { t } = useTranslation();
-  const sortedProjects = [...projectItems].sort((a, b) => {
-    const scoreA = featuredProjects[a.id]?.score ?? 0;
-    const scoreB = featuredProjects[b.id]?.score ?? 0;
-    return scoreB - scoreA;
-  });
+  const sortedProjects = useMemo(
+    () =>
+      [...projectItems].sort((a, b) => {
+        const scoreA = featuredProjects[a.id]?.score ?? 0;
+        const scoreB = featuredProjects[b.id]?.score ?? 0;
+        return scoreB - scoreA;
+      }),
+    []
+  );
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -71,7 +75,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, t }) => {
   const projectStatus = projectMeta?.status ?? "learning";
 
   return (
-    <motion.article
+    <m.article
       initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -134,7 +138,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, t }) => {
           )}
         </div>
       </div>
-    </motion.article>
+    </m.article>
   );
 };
 

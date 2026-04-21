@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { BubbleText } from "../ui/bubble-text";
 import BorderGlow from "../ui/BorderGlow";
 
@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => {
       ref={heroRef}
       className="relative flex flex-col items-center justify-center min-h-[100svh] shrink-0 px-4 md:px-6 py-10 md:py-20 text-center"
     >
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -84,16 +84,16 @@ const HeroSection: React.FC = () => {
         <BubbleText text="Carlos Moreno" />
 
         {/* Subtitle */}
-        <motion.p
+        <m.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-2xl font-light"
         >
           {t("hero.subtitle")}
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.35 }}
@@ -119,13 +119,13 @@ const HeroSection: React.FC = () => {
               </span>
             </div>
           </BorderGlow>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* Scroll indicator */}
       <AnimatePresence>
         {!hasScrolled && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: [0, 8, 0] }}
             exit={{ opacity: 0, y: -10 }}
@@ -149,7 +149,7 @@ const HeroSection: React.FC = () => {
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </section>

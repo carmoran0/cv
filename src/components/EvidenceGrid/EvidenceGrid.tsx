@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { evidenceItems } from "../../data/cv";
 import ProofTile from "../ProofTile/ProofTile";
 
@@ -18,7 +18,7 @@ const EvidenceGrid: React.FC<EvidenceGridProps> = ({ activeSkills }) => {
   return (
     <div>
       <AnimatePresence mode="wait">
-        <motion.h2
+        <m.h2
           key={`evidence-title-${i18n.language}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -27,7 +27,7 @@ const EvidenceGrid: React.FC<EvidenceGridProps> = ({ activeSkills }) => {
           className="text-xs font-sans font-semibold tracking-widest text-text-secondary uppercase mb-4"
         >
           {t("evidence.title")}
-        </motion.h2>
+        </m.h2>
       </AnimatePresence>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -48,7 +48,7 @@ const EvidenceGrid: React.FC<EvidenceGridProps> = ({ activeSkills }) => {
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.p
+        <m.p
           key={`evidence-counter-${i18n.language}-${highlightedCount}`}
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const EvidenceGrid: React.FC<EvidenceGridProps> = ({ activeSkills }) => {
             visible: highlightedCount,
             total: evidenceItems.length,
           })}
-        </motion.p>
+        </m.p>
       </AnimatePresence>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Section } from "../../types";
 
 interface SidebarProps {
@@ -24,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
       {/* Desktop sidebar */}
       <nav className="hidden md:flex flex-col gap-1 w-48 min-h-full p-4 bg-surface border-r border-border">
         {sections.map((section) => (
-          <motion.button
+          <m.button
             key={section.id}
             onClick={() => onSectionChange(section.id)}
             className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-left font-medium transition-all duration-200 ${
@@ -37,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
           >
             <span className="font-sans text-xs">{section.icon}</span>
             <AnimatePresence mode="wait">
-              <motion.span
+              <m.span
                 key={`${section.id}-${i18n.language}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -45,9 +45,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
                 transition={{ duration: 0.15 }}
               >
                 {t(section.labelKey)}
-              </motion.span>
+              </m.span>
             </AnimatePresence>
-          </motion.button>
+          </m.button>
         ))}
       </nav>
 

@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, useEffect, type ReactNode } from "react";
+import React, { useRef, useCallback, useReducer, useEffect, type ReactNode } from "react";
 
 interface BorderGlowProps {
   children?: ReactNode;
@@ -98,6 +98,34 @@ function buildMeshGradients(colors: string[]): string[] {
   return gradients;
 }
 
+interface GlowState {
+  isHovered: boolean;
+  cursorAngle: number;
+  edgeProximity: number;
+  sweepActive: boolean;
+}
+
+type GlowAction =
+  | { type: "set-hovered"; value: boolean }
+  | { type: "set-cursor-angle"; value: number }
+  | { type: "set-edge-proximity"; value: number }
+  | { type: "set-sweep-active"; value: boolean };
+
+function glowReducer(state: GlowState, action: GlowAction): GlowState {
+  switch (action.type) {
+    case "set-hovered":
+      return { ...state, isHovered: action.value };
+    case "set-cursor-angle":
+      return { ...state, cursorAngle: action.value };
+    case "set-edge-proximity":
+      return { ...state, edgeProximity: action.value };
+    case "set-sweep-active":
+      return { ...state, sweepActive: action.value };
+    default:
+      return state;
+  }
+}
+
 const BorderGlow: React.FC<BorderGlowProps> = ({
   children,
   className = "",
@@ -113,10 +141,13 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
   fillOpacity = 0.35,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-  const [cursorAngle, setCursorAngle] = useState(45);
-  const [edgeProximity, setEdgeProximity] = useState(0);
-  const [sweepActive, setSweepActive] = useState(false);
+  const [glowState, dispatchGlow] = useReducer(glowReducer, {
+    isHovered: false,
+    cursorAngle: 45,
+    edgeProximity: 0,
+    sweepActive: false,
+  });
+  const { isHovered, cursorAngle, edgeProximity, sweepActive } = glowState;
 
   const getCenterOfElement = useCallback((el: HTMLElement) => {
     const { width, height } = el.getBoundingClientRect();
@@ -158,8 +189,14 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      setEdgeProximity(getEdgeProximity(card, x, y));
-      setCursorAngle(getCursorAngle(card, x, y));
+      dispatchGlow({
+        type: "set-edge-proximity",
+        value: getEdgeProximity(card, x, y),
+      });
+      dispatchGlow({
+        type: "set-cursor-angle",
+        value: getCursorAngle(card, x, y),
+      });
     },
     [getEdgeProximity, getCursorAngle]
   );
@@ -168,16 +205,23 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
     if (!animated) return;
     const angleStart = 110;
     const angleEnd = 465;
-    setSweepActive(true);
-    setCursorAngle(angleStart);
+    dispatchGlow({ type: "set-sweep-active", value: true });
+    dispatchGlow({ type: "set-cursor-angle", value: angleStart });
 
-    animateValue({ duration: 500, onUpdate: (v) => setEdgeProximity(v / 100) });
+    animateValue({
+      duration: 500,
+      onUpdate: (v) =>
+        dispatchGlow({ type: "set-edge-proximity", value: v / 100 }),
+    });
     animateValue({
       ease: easeInCubic,
       duration: 1500,
       end: 50,
       onUpdate: (v) => {
-        setCursorAngle((angleEnd - angleStart) * (v / 100) + angleStart);
+        dispatchGlow({
+          type: "set-cursor-angle",
+          value: (angleEnd - angleStart) * (v / 100) + angleStart,
+        });
       },
     });
     animateValue({
@@ -187,7 +231,10 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
       start: 50,
       end: 100,
       onUpdate: (v) => {
-        setCursorAngle((angleEnd - angleStart) * (v / 100) + angleStart);
+        dispatchGlow({
+          type: "set-cursor-angle",
+          value: (angleEnd - angleStart) * (v / 100) + angleStart,
+        });
       },
     });
     animateValue({
@@ -196,8 +243,9 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
       duration: 1500,
       start: 100,
       end: 0,
-      onUpdate: (v) => setEdgeProximity(v / 100),
-      onEnd: () => setSweepActive(false),
+      onUpdate: (v) =>
+        dispatchGlow({ type: "set-edge-proximity", value: v / 100 }),
+      onEnd: () => dispatchGlow({ type: "set-sweep-active", value: false }),
     });
   }, [animated]);
 
@@ -219,8 +267,8 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
     <div
       ref={cardRef}
       onPointerMove={handlePointerMove}
-      onPointerEnter={() => setIsHovered(true)}
-      onPointerLeave={() => setIsHovered(false)}
+      onPointerEnter={() => dispatchGlow({ type: "set-hovered", value: true })}
+      onPointerLeave={() => dispatchGlow({ type: "set-hovered", value: false })}
       className={`relative grid isolate border border-white/15 ${className}`}
       style={{
         background: backgroundColor,

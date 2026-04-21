@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 interface BubbleTextProps {
   text?: string;
@@ -8,13 +8,25 @@ export const BubbleText: React.FC<BubbleTextProps> = ({
   text = "Carlos Moreno",
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const characters = useMemo(() => {
+    const counts = new Map<string, number>();
+    return text.split("").map((char) => {
+      const count = (counts.get(char) ?? 0) + 1;
+      counts.set(char, count);
+      const keyPrefix = char === " " ? "space" : char;
+      return {
+        char,
+        key: `${keyPrefix}-${count}`,
+      };
+    });
+  }, [text]);
 
   return (
     <h2
       onMouseLeave={() => setHoveredIndex(null)}
       className="max-w-full overflow-hidden text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-thin text-text-primary tracking-tight font-hero"
     >
-      {text.split("").map((char, idx) => {
+      {characters.map(({ char, key }, idx) => {
         const distance =
           hoveredIndex !== null ? Math.abs(hoveredIndex - idx) : null;
 
@@ -37,7 +49,7 @@ export const BubbleText: React.FC<BubbleTextProps> = ({
 
         return (
           <span
-            key={idx}
+            key={key}
             onMouseEnter={() => setHoveredIndex(idx)}
             className={classes}
           >

@@ -1,34 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import BorderGlow from "../ui/BorderGlow";
 
 const NOTICE_SESSION_KEY = "cv-mobile-notice-dismissed";
 
+interface MobileNoticeState {
+  isMobile: boolean;
+  dismissed: boolean;
+}
+
 const MobileNotice: React.FC = () => {
   const { t } = useTranslation();
-  const [isMobile, setIsMobile] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
+  const [noticeState, setNoticeState] = useState<MobileNoticeState>({
+    isMobile: false,
+    dismissed: false,
+  });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const getDismissedFromStorage = () =>
+      window.sessionStorage.getItem(NOTICE_SESSION_KEY) === "true";
 
-    const updateMobileState = (matches: boolean) => {
-      setIsMobile(matches);
-      if (!matches) {
-        setDismissed(false);
-      }
-    };
+    const buildState = (matches: boolean): MobileNoticeState => ({
+      isMobile: matches,
+      dismissed: matches ? getDismissedFromStorage() : false,
+    });
 
-    updateMobileState(mediaQuery.matches);
-
-    const storedValue = window.sessionStorage.getItem(NOTICE_SESSION_KEY);
-    if (storedValue === "true") {
-      setDismissed(true);
-    }
+    setNoticeState(buildState(mediaQuery.matches));
 
     const handler = (event: MediaQueryListEvent) => {
-      updateMobileState(event.matches);
+      setNoticeState(buildState(event.matches));
     };
 
     mediaQuery.addEventListener("change", handler);
@@ -38,16 +40,16 @@ const MobileNotice: React.FC = () => {
   }, []);
 
   const handleDismiss = () => {
-    setDismissed(true);
     window.sessionStorage.setItem(NOTICE_SESSION_KEY, "true");
+    setNoticeState((current) => ({ ...current, dismissed: true }));
   };
 
-  const shouldShow = isMobile && !dismissed;
+  const shouldShow = noticeState.isMobile && !noticeState.dismissed;
 
   return (
     <AnimatePresence>
       {shouldShow && (
-        <motion.div
+        <m.div
           initial={{ y: -12, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -12, opacity: 0 }}
@@ -103,7 +105,7 @@ const MobileNotice: React.FC = () => {
               </div>
             </div>
           </BorderGlow>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

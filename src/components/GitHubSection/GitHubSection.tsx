@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { contactData } from "../../data/cv";
 import { extractGitHubUsername } from "../../services/github";
@@ -187,7 +187,7 @@ const RepositoryCard: React.FC<{
   index: number;
   t: (key: string) => string;
 }> = ({ repo, index, t }) => (
-  <motion.article
+  <m.article
     initial={{ opacity: 0, y: 12 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -226,7 +226,7 @@ const RepositoryCard: React.FC<{
     >
       {t("github.open_repo")}
     </a>
-  </motion.article>
+  </m.article>
 );
 
 const StatBadge: React.FC<{ label: string; value: number }> = ({ label, value }) => (

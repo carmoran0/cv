@@ -132,6 +132,21 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     };
   }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
 
+  const spawnSparks = useCallback(
+    (x: number, y: number) => {
+      const now = performance.now();
+      const newSparks: Spark[] = Array.from({ length: sparkCount }, (_, i) => ({
+        x,
+        y,
+        angle: (2 * Math.PI * i) / sparkCount,
+        startTime: now
+      }));
+
+      sparksRef.current.push(...newSparks);
+    },
+    [sparkCount]
+  );
+
   const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -139,19 +154,28 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const now = performance.now();
-    const newSparks: Spark[] = Array.from({ length: sparkCount }, (_, i) => ({
-      x,
-      y,
-      angle: (2 * Math.PI * i) / sparkCount,
-      startTime: now
-    }));
+    spawnSparks(x, y);
+  };
 
-    sparksRef.current.push(...newSparks);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): void => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+
+    e.preventDefault();
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    spawnSparks(canvas.width / 2, canvas.height / 2);
   };
 
   return (
-    <div className="relative w-full h-full" onClick={handleClick}>
+    <div
+      className="relative w-full h-full"
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label="Trigger spark effect"
+    >
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
       {children}
     </div>

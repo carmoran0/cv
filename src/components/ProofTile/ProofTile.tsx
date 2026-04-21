@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { EvidenceItem } from "../../types";
 import { useMode } from "../../context/ModeContext";
 import BorderGlow from "../ui/BorderGlow";
@@ -23,7 +23,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
       <div className="flex items-start gap-2">
         <span className="text-lg">{item.icon}</span>
         <AnimatePresence mode="wait">
-          <motion.h4
+          <m.h4
             key={`tile-title-${item.id}-${i18n.language}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -32,13 +32,13 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
             className="text-sm font-semibold text-text-primary leading-tight"
           >
             {t(item.titleKey)}
-          </motion.h4>
+          </m.h4>
         </AnimatePresence>
       </div>
 
       <AnimatePresence>
         {mode === "technical" && stackText && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -53,7 +53,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
                 {tag}
               </span>
             ))}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
@@ -62,7 +62,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
           {t("evidence.goal")}
         </span>
         <AnimatePresence mode="wait">
-          <motion.p
+          <m.p
             key={`goal-${item.id}-${i18n.language}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -71,7 +71,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
             className="text-xs text-text-secondary leading-relaxed"
           >
             {t(item.goalKey)}
-          </motion.p>
+          </m.p>
         </AnimatePresence>
       </div>
 
@@ -80,7 +80,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
           {t("evidence.learned")}
         </span>
         <AnimatePresence mode="wait">
-          <motion.p
+          <m.p
             key={`learned-${item.id}-${i18n.language}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -89,7 +89,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
             className="text-xs text-text-secondary leading-relaxed"
           >
             {t(item.learnedKey)}
-          </motion.p>
+          </m.p>
         </AnimatePresence>
       </div>
 
@@ -102,7 +102,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
   );
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       animate={{
         opacity: hasActiveFilter ? (isHighlighted ? 1 : 0.25) : 1,
@@ -134,7 +134,7 @@ const ProofTile: React.FC<ProofTileProps> = ({ item, index, isHighlighted, hasAc
           {tileContent}
         </div>
       )}
-    </motion.div>
+    </m.div>
   );
 };
 

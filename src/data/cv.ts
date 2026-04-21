@@ -1,9 +1,6 @@
 import {
-  KPIItem,
   EvidenceItem,
   SkillItem,
-  ArchitectureNode,
-  SignalItem,
   ExperienceItem,
   CertificationItem,
   ProjectItem,
@@ -22,12 +19,6 @@ import imgTransactSql from "../images/get-started-querying-with-transact-sql.svg
 import imgMongoRelational from "../images/from-relational-model-sql-to-mongodb-s-document-mod-96.webp";
 import imgGenericTrophy from "../images/generic-trophy.svg";
 import imgAwsAcademy from "../images/aws-academy-graduate-cloud-foundations-training-bad.png";
-
-export const kpiItems: KPIItem[] = [];
-
-export const architectureNodes: ArchitectureNode[] = [];
-
-export const signalItems: SignalItem[] = [];
 
 export const evidenceItems: EvidenceItem[] = [];
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { contactData } from "../../data/cv";
 import BorderGlow from "../ui/BorderGlow";
 import { EmailIcon, GitHubIcon, LinkedInIcon } from "../icons/Icons";
@@ -35,7 +35,7 @@ const ContactSection: React.FC = () => {
 
   return (
     <div id="contact" className="max-w-lg">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
@@ -70,10 +70,10 @@ const ContactSection: React.FC = () => {
             </div>
           </div>
         </BorderGlow>
-      </motion.div>
+      </m.div>
 
       <AnimatePresence mode="wait">
-        <motion.h2
+        <m.h2
           key={`contact-title-${i18n.language}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -82,12 +82,12 @@ const ContactSection: React.FC = () => {
           className="text-xs font-sans font-semibold tracking-widest text-text-secondary uppercase mb-4"
         >
           {t("contact.title")}
-        </motion.h2>
+        </m.h2>
       </AnimatePresence>
 
       <div className="flex flex-col gap-3">
         {links.map((link, idx) => (
-          <motion.a
+          <m.a
             key={link.id}
             href={link.href}
             target={link.id !== "email" ? "_blank" : undefined}
@@ -108,12 +108,12 @@ const ContactSection: React.FC = () => {
                 {link.value}
               </span>
             </div>
-          </motion.a>
+          </m.a>
         ))}
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.p
+        <m.p
           key={`preferred-${i18n.language}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -122,7 +122,7 @@ const ContactSection: React.FC = () => {
           className="mt-4 text-xs text-text-secondary font-sans italic"
         >
           {t("contact.preferred")}
-        </motion.p>
+        </m.p>
       </AnimatePresence>
 
       <a

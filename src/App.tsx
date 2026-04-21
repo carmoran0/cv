@@ -11,7 +11,7 @@ import GitHubSection from "./components/GitHubSection/GitHubSection";
 import CertificationsSection from "./components/CertificationsSection/CertificationsSection";
 import { FlickeringGrid } from "./components/ui/flickering-grid";
 import { LocationTag } from "./components/ui/LocationTag";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import profileImg from "./images/profile.webp";
 
@@ -79,7 +79,7 @@ function App() {
                       />
 
                       {/* Map overlay */}
-                      <motion.div
+                      <m.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: isLocationHovered ? 1 : 0 }}
                         transition={{ duration: 0.3 }}
@@ -88,7 +88,7 @@ function App() {
                         <Suspense fallback={null}>
                           <LazyZaragozaMap />
                         </Suspense>
-                      </motion.div>
+                      </m.div>
                     </div>
 
                     <LocationTag

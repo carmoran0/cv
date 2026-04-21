@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const TopBar: React.FC = () => {
@@ -12,7 +12,7 @@ const TopBar: React.FC = () => {
   };
 
   return (
-    <motion.header
+    <m.header
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -55,7 +55,7 @@ const TopBar: React.FC = () => {
           className="px-3 py-1.5 rounded-md text-xs font-medium bg-accent text-bg hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
         >
           <AnimatePresence mode="wait">
-            <motion.span
+            <m.span
               key={`download-cv-${i18n.language}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -63,11 +63,11 @@ const TopBar: React.FC = () => {
               transition={{ duration: 0.2 }}
             >
               {t("topbar.download_cv")}
-            </motion.span>
+            </m.span>
           </AnimatePresence>
         </a>
       </div>
-    </motion.header>
+    </m.header>
   );
 };
 

@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ExperienceItem } from "../../types";
 import { experienceItems } from "../../data/cv";
 import BorderGlow from "../ui/BorderGlow";
@@ -18,8 +18,14 @@ const ExperienceTimeline: React.FC = () => {
   const [canScrollRight, setCanScrollRight] = useState(false);
 
   // Sort by sortDate ascending (oldest first → left to right)
-  const sorted = [...experienceItems].sort((a, b) => a.sortDate - b.sortDate);
-  const selectedItem = sorted.find((item) => item.id === selectedId);
+  const sorted = useMemo(
+    () => [...experienceItems].sort((a, b) => a.sortDate - b.sortDate),
+    []
+  );
+  const selectedItem = useMemo(
+    () => sorted.find((item) => item.id === selectedId),
+    [sorted, selectedId]
+  );
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -55,7 +61,7 @@ const ExperienceTimeline: React.FC = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       layout
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="relative max-w-full overflow-hidden"
@@ -89,12 +95,12 @@ const ExperienceTimeline: React.FC = () => {
       )}
 
       {/* Horizontal scrollable timeline */}
-      <motion.div
+      <m.div
         layout
         ref={scrollRef}
         className="max-w-full overflow-x-auto scrollbar-hide pb-4 [overscroll-behavior-x:contain]"
       >
-        <motion.div
+        <m.div
           layout
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="relative flex items-end gap-0 min-w-max px-4 md:px-6 pt-4 pb-2"
@@ -113,13 +119,13 @@ const ExperienceTimeline: React.FC = () => {
               t={t}
             />
           ))}
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* Expanded detail panel */}
       <AnimatePresence mode="wait">
         {selectedItem && selectedItem.descriptionKey && (
-          <motion.div
+          <m.div
             layout
             key={selectedItem.id}
             initial={{ height: 0, opacity: 0 }}
@@ -150,10 +156,10 @@ const ExperienceTimeline: React.FC = () => {
                 {t(selectedItem.descriptionKey)}
               </p>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -232,7 +238,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
   );
 
   return (
-    <motion.div
+    <m.div
       layout
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -241,7 +247,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
       className="relative flex min-w-[160px] sm:min-w-[180px] md:min-w-[200px] flex-col items-center"
     >
       {/* Card above the line */}
-      <motion.div layout whileHover={{ y: -4 }} className="mb-4">
+      <m.div layout whileHover={{ y: -4 }} className="mb-4">
         {isSelected ? (
           <BorderGlow
             edgeSensitivity={28}
@@ -255,27 +261,33 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
             colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
             className={`w-[150px] sm:w-[170px] md:w-[180px] h-[200px] rounded-xl border-accent/60 transition-all ${hasDescription ? "cursor-pointer" : ""}`}
           >
-            <div
+            <button
+              type="button"
               onClick={hasDescription ? onSelect : undefined}
-              className="w-full h-full rounded-xl bg-gradient-to-b from-accent/25 to-surface p-3 md:p-4 flex flex-col"
+              disabled={!hasDescription}
+              aria-expanded={hasDescription ? isSelected : undefined}
+              className="w-full h-full rounded-xl border-0 bg-gradient-to-b from-accent/25 to-surface p-3 md:p-4 flex flex-col text-left disabled:cursor-default"
             >
               {cardBody}
-            </div>
+            </button>
           </BorderGlow>
         ) : (
-          <div
+          <button
+            type="button"
             onClick={hasDescription ? onSelect : undefined}
+            disabled={!hasDescription}
+            aria-expanded={hasDescription ? isSelected : undefined}
             className={`w-[150px] sm:w-[170px] md:w-[180px] h-[200px] rounded-xl border p-3 md:p-4 transition-all flex flex-col border-border bg-surface/60 hover:border-accent/40 hover:bg-surface/85 ${
               hasDescription ? "cursor-pointer" : ""
-            }`}
+            } disabled:cursor-default text-left`}
           >
             {cardBody}
-          </div>
+          </button>
         )}
-      </motion.div>
+      </m.div>
 
       {/* Timeline dot */}
-      <motion.div
+      <m.div
         layout
         animate={
           isSelected
@@ -285,7 +297,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
         transition={{ duration: 0.2 }}
         className="w-3.5 h-3.5 rounded-full border-2 border-accent bg-bg z-10 shrink-0"
       />
-    </motion.div>
+    </m.div>
   );
 };
 

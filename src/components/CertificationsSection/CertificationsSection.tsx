@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { certificationItems } from "../../data/cv";
 
 type CertificationGroupKey = "microsoft" | "amazon" | "others";
@@ -125,7 +125,7 @@ const CertificationsSection: React.FC = () => {
 
             <div className="flex flex-wrap justify-center gap-3">
               {certifications.map((cert, idx) => (
-                <motion.div
+                <m.div
                   key={cert.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -195,7 +195,7 @@ const CertificationsSection: React.FC = () => {
                       </div>
                     )}
                   </a>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </section>
