@@ -22,6 +22,7 @@ const GitHubSection: React.FC = () => {
 
   return (
     <section id="github" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
+      <div className="mx-auto w-full max-w-6xl">
       <div className="flex items-center justify-between gap-3 mb-4">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-text-primary border-b border-border pb-4 mb-2">
@@ -155,6 +156,7 @@ const GitHubSection: React.FC = () => {
           </button>
         </div>
       ) : null}
+      </div>
     </section>
   );
 };

@@ -64,40 +64,42 @@ function App() {
 
             {/* About */}
             <section id="about" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
-              <SectionHeading titleKey="about.title" />
-              <div className="flex justify-center">
-                <div className="flex w-full flex-col md:flex-row gap-8 items-center md:items-start">
-                  <AboutSection />
-                  <div className="flex w-full max-w-56 md:w-56 flex-col items-center gap-3 shrink-0">
-                    {/* Profile Image Container with Map Animation */}
-                    <div className="relative w-full h-40 rounded-xl border border-border/80 overflow-hidden">
-                      {/* Base profile image */}
-                      <img
-                        src={profileImg}
-                        alt={t("app.profile_alt")}
-                        className="absolute inset-0 w-full h-full object-cover"
+              <div className="mx-auto w-full max-w-6xl">
+                <SectionHeading titleKey="about.title" />
+                <div className="flex justify-center">
+                  <div className="flex w-full flex-col md:flex-row gap-8 items-center md:items-start">
+                    <AboutSection />
+                    <div className="flex w-full max-w-56 md:w-56 flex-col items-center gap-3 shrink-0">
+                      {/* Profile Image Container with Map Animation */}
+                      <div className="relative w-full h-40 rounded-xl border border-border/80 overflow-hidden">
+                        {/* Base profile image */}
+                        <img
+                          src={profileImg}
+                          alt={t("app.profile_alt")}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+
+                        {/* Map overlay */}
+                        <m.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: isLocationHovered ? 1 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 w-full h-full z-20"
+                        >
+                          <Suspense fallback={null}>
+                            <LazyZaragozaMap />
+                          </Suspense>
+                        </m.div>
+                      </div>
+
+                      <LocationTag
+                        city="Zaragoza"
+                        country="Spain"
+                        timezone="CET"
+                        className="w-full justify-between px-3 py-1.5 text-sm"
+                        onHoverChange={setIsLocationHovered}
                       />
-
-                      {/* Map overlay */}
-                      <m.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: isLocationHovered ? 1 : 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute inset-0 w-full h-full z-20"
-                      >
-                        <Suspense fallback={null}>
-                          <LazyZaragozaMap />
-                        </Suspense>
-                      </m.div>
                     </div>
-
-                    <LocationTag
-                      city="Zaragoza"
-                      country="Spain"
-                      timezone="CET"
-                      className="w-full justify-between px-3 py-1.5 text-sm"
-                      onHoverChange={setIsLocationHovered}
-                    />
                   </div>
                 </div>
               </div>
@@ -105,16 +107,20 @@ function App() {
 
             {/* Experience */}
             <section id="experience" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
-              <SectionHeading titleKey="experience.title" />
-              <div className="flex justify-center">
-                <ExperienceTimeline />
+              <div className="mx-auto w-full max-w-6xl">
+                <SectionHeading titleKey="experience.title" />
+                <div className="flex justify-center">
+                  <ExperienceTimeline />
+                </div>
               </div>
             </section>
 
             {/* Projects */}
             <section id="projects" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
-              <SectionHeading titleKey="projects.title" />
-              <ProjectsSection />
+              <div className="mx-auto w-full max-w-6xl">
+                <SectionHeading titleKey="projects.title" />
+                <ProjectsSection />
+              </div>
             </section>
 
             {/* GitHub */}
@@ -122,13 +128,17 @@ function App() {
 
             {/* Certifications */}
             <section id="certifications" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
-              <SectionHeading titleKey="certifications.title" />
-              <CertificationsSection />
+              <div className="mx-auto w-full max-w-6xl">
+                <SectionHeading titleKey="certifications.title" />
+                <CertificationsSection />
+              </div>
             </section>
 
             {/* Contact */}
             <section id="contact" className="px-4 md:px-8 lg:px-16 py-8 md:py-12">
-              <ContactSection />
+              <div className="mx-auto w-full max-w-6xl">
+                <ContactSection />
+              </div>
             </section>
           </main>
         </div>

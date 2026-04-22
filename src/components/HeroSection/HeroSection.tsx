@@ -83,43 +83,45 @@ const HeroSection: React.FC = () => {
         {/* Name */}
         <BubbleText text="Carlos Moreno" />
 
-        {/* Subtitle */}
-        <m.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-2xl font-light"
-        >
-          {t("hero.subtitle")}
-        </m.p>
-
-        <m.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.35 }}
-          whileHover={{ y: -1 }}
-          className="inline-flex"
-        >
-          <BorderGlow
-            edgeSensitivity={28}
-            glowColor="155 100 45"
-            backgroundColor="#111118"
-            borderRadius={999}
-            glowRadius={22}
-            glowIntensity={0.55}
-            coneSpread={25}
-            animated={false}
-            colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
-            className="border-accent/45"
+        <div className="flex w-full max-w-3xl flex-col items-center gap-4 md:flex-row md:items-center md:justify-center md:gap-5">
+          {/* Subtitle */}
+          <m.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="max-w-2xl text-lg font-light text-text-secondary sm:text-xl md:text-right md:text-2xl"
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent/25 via-accent-green/10 to-transparent px-4 py-1.5">
-              <span className="h-2 w-2 rounded-full bg-accent-green animate-pulse" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-text-primary">
-                {t("hero.availability_badge")}
-              </span>
-            </div>
-          </BorderGlow>
-        </m.div>
+            {t("hero.subtitle")}
+          </m.p>
+
+          <m.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.35 }}
+            whileHover={{ y: -1 }}
+            className="inline-flex shrink-0"
+          >
+            <BorderGlow
+              edgeSensitivity={28}
+              glowColor="155 100 45"
+              backgroundColor="#111118"
+              borderRadius={999}
+              glowRadius={22}
+              glowIntensity={0.55}
+              coneSpread={25}
+              animated={false}
+              colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
+              className="border-accent/45"
+            >
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent/25 via-accent-green/10 to-transparent px-4 py-1.5">
+                <span className="h-2 w-2 rounded-full bg-accent-green animate-pulse" />
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-text-primary sm:text-xs">
+                  {t("hero.availability_badge")}
+                </span>
+              </div>
+            </BorderGlow>
+          </m.div>
+        </div>
       </m.div>
 
       {/* Scroll indicator */}
