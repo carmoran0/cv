@@ -53,7 +53,8 @@ const ContactSection: React.FC = () => {
           colors={["#00e5a0", "#14c98f", "#6ee7c8"]}
           className="rounded-xl border-accent/35"
         >
-          <div className="rounded-xl bg-gradient-to-r from-accent/20 via-accent-green/10 to-transparent p-4">
+          <div className="relative overflow-hidden rounded-xl border border-white/5 bg-gradient-to-br from-accent/20 via-accent-green/10 to-transparent p-4 shadow-[0_18px_45px_-28px_rgba(0,0,0,0.9)] md:p-5">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
             <p className="text-xs font-semibold uppercase tracking-wider text-text-primary">
               {t("contact.cta_title")}
             </p>
@@ -85,30 +86,35 @@ const ContactSection: React.FC = () => {
         </m.h2>
       </AnimatePresence>
 
-      <div className="flex flex-col gap-3">
+      <div className="relative flex flex-col gap-3 md:gap-4 md:pl-10">
+        <div className="pointer-events-none absolute left-4 top-2 hidden h-[calc(100%-0.5rem)] w-px bg-gradient-to-b from-transparent via-accent/35 to-transparent md:block" />
         {links.map((link, idx) => (
-          <m.a
+          <div
             key={link.id}
-            href={link.href}
-            target={link.id !== "email" ? "_blank" : undefined}
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: idx * 0.08 }}
-            className="flex items-center gap-3 p-4 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all group"
+            className={`flex ${idx % 2 === 0 ? "justify-start md:pr-8" : "justify-end md:pl-8"}`}
           >
-            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent/10 text-accent text-xs font-sans font-bold group-hover:bg-accent/20 transition-colors">
-              {link.icon}
-            </span>
-            <div className="flex min-w-0 flex-col">
-              <span className="text-[10px] font-sans font-semibold tracking-wide text-text-secondary uppercase">
-                {link.label}
+            <m.a
+              href={link.href}
+              target={link.id !== "email" ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -18 : 18, y: 12 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.35, delay: 0.08 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
+              className={`group flex w-full max-w-[calc(100%-1rem)] items-center gap-3 rounded-xl border border-border bg-surface p-4 shadow-[0_16px_34px_-26px_rgba(0,0,0,0.9)] transition-all hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-[0_22px_46px_-28px_rgba(0,0,0,0.95)] md:max-w-[88%] ${idx % 2 === 0 ? "md:-translate-x-1 md:rounded-l-2xl md:border-l-accent/25" : "md:translate-x-1 md:rounded-r-2xl md:border-r-accent/25"}`}
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 text-xs font-bold text-accent transition-colors group-hover:bg-accent/20">
+                {link.icon}
               </span>
-              <span className="truncate text-sm text-text-primary group-hover:text-accent transition-colors">
-                {link.value}
-              </span>
-            </div>
-          </m.a>
+              <div className="flex min-w-0 flex-col">
+                <span className="text-[10px] font-sans font-semibold tracking-wide text-text-secondary uppercase">
+                  {link.label}
+                </span>
+                <span className="truncate text-sm text-text-primary transition-colors group-hover:text-accent">
+                  {link.value}
+                </span>
+              </div>
+            </m.a>
+          </div>
         ))}
       </div>
 
@@ -127,7 +133,7 @@ const ContactSection: React.FC = () => {
 
       <a
         href={`mailto:${emailAddress}`}
-        className="mt-4 inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-bg hover:opacity-90 transition-opacity"
+        className="mt-4 inline-flex items-center justify-center self-start rounded-lg bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-bg shadow-[0_16px_32px_-22px_rgba(0,0,0,0.95)] transition-all hover:-translate-y-0.5 hover:opacity-90 md:ml-10"
       >
         {t("contact.cta_action")}
       </a>
