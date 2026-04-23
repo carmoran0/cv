@@ -1,12 +1,20 @@
 {
   "hero": {
-    "subtitle": "Data Engineering student · Unizar",
+    "kicker": "Creative and consistent",
+    "subtitle": "Data Engineering student at Unizar. Finalist in The Wave Hackathon 2026.",
+    "role": "I enjoy solving problems and building useful projects",
     "availability_badge": "Open to internships",
-    "impact_1": "1 extension used daily (5 users/day)",
+    "impact_1": "Creative and practical; comfortable presenting ideas",
     "impact_2": "Real stack: data, backend and visualization",
     "impact_3": "Active Data/Cloud certifications",
-    "cta_evidence": "See key proof",
-    "cta_contact": "Contact now"
+    "panel_label": "Profile",
+    "panel_title": "Student with initiative and a product mindset",
+    "tag_1": "Python + SQL",
+    "tag_2": "ETL + APIs",
+    "tag_3": "BI + Frontend",
+    "cta_evidence": "See projects",
+    "cta_contact": "Contact",
+    "scroll_hint": "Scroll"
   },
   "mobile_notice": {
     "title": "Viewing recommendation",

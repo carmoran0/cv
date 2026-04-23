@@ -1,12 +1,20 @@
 {
   "hero": {
-    "subtitle": "Estudiante de Ingeniería de Datos · Unizar",
+    "kicker": "Creativo y constante",
+    "subtitle": "Estudiante de Ingeniería de Datos en Unizar. Finalista en The Wave Hackathon 2026.",
+    "role": "Me gusta resolver problemas y construir proyectos útiles",
     "availability_badge": "Disponible para prácticas",
-    "impact_1": "1 extensión en uso diario (5 usuarios/día)",
+    "impact_1": "Creativo y práctico; cómodo presentando ideas",
     "impact_2": "Stack real: datos, backend y visualización",
     "impact_3": "Certificaciones activas en Data/Cloud",
-    "cta_evidence": "Ver pruebas clave",
-    "cta_contact": "Contactar ahora"
+    "panel_label": "Perfil",
+    "panel_title": "Estudiante con iniciativa y enfoque en producto",
+    "tag_1": "Python + SQL",
+    "tag_2": "ETL + APIs",
+    "tag_3": "BI + Frontend",
+    "cta_evidence": "Ver proyectos",
+    "cta_contact": "Contactar",
+    "scroll_hint": "Bajar"
   },
   "mobile_notice": {
     "title": "Recomendación de visualización",

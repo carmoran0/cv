@@ -19,6 +19,7 @@ const tagClasses: Record<ProjectTag, string> = {
 };
 
 const projectIcons: Record<string, React.ReactNode> = {
+  the_wave_hackathon_2026: <CodeBracketIcon />,
   microsystems_programming: <ChipIcon />,
   sensor_cloud_discord: <WifiIcon />,
   power_bi_visuals: <ChartBarIcon />,

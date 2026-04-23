@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { certificationItems } from "../../data/cv";
 
 type CertificationGroupKey = "microsoft" | "amazon" | "others";
@@ -125,7 +125,7 @@ const CertificationsSection: React.FC = () => {
 
             <div className="flex flex-wrap justify-center gap-3">
               {certifications.map((cert, idx) => (
-                <m.div
+                <motion.div
                   key={cert.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +152,7 @@ const CertificationsSection: React.FC = () => {
                         alt={t(cert.titleKey).toString()}
                         loading="lazy"
                         className={`block h-20 w-20 mb-2 object-contain ${
-                          cert.comingSoon ? "opacity-40" : ""
+                          cert.comingSoon ? "opacity-25" : ""
                         }`}
                       />
                     ) : cert.badgeUrl ? (
@@ -161,7 +161,7 @@ const CertificationsSection: React.FC = () => {
                         alt={t(cert.titleKey).toString()}
                         loading="lazy"
                         className={`block h-20 w-20 mb-2 object-contain ${
-                          cert.comingSoon ? "opacity-40" : ""
+                          cert.comingSoon ? "opacity-25" : ""
                         }`}
                       />
                     ) : (
@@ -195,7 +195,7 @@ const CertificationsSection: React.FC = () => {
                       </div>
                     )}
                   </a>
-                </m.div>
+                </motion.div>
               ))}
             </div>
           </section>

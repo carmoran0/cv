@@ -2,10 +2,12 @@ import React, { useMemo, useState } from "react";
 
 interface BubbleTextProps {
   text?: string;
+  className?: string;
 }
 
 export const BubbleText: React.FC<BubbleTextProps> = ({
   text = "Carlos Moreno",
+  className = "",
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const characters = useMemo(() => {
@@ -24,7 +26,7 @@ export const BubbleText: React.FC<BubbleTextProps> = ({
   return (
     <h2
       onMouseLeave={() => setHoveredIndex(null)}
-      className="max-w-full overflow-hidden text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-thin text-text-primary tracking-tight font-hero"
+      className={`max-w-full overflow-visible text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-thin text-text-primary tracking-tight font-hero ${className}`}
     >
       {characters.map(({ char, key }, idx) => {
         const distance =
@@ -53,7 +55,7 @@ export const BubbleText: React.FC<BubbleTextProps> = ({
             onMouseEnter={() => setHoveredIndex(idx)}
             className={classes}
           >
-            {char === " " ? "\u00A0" : char}
+            {char}
           </span>
         );
       })}

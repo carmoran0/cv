@@ -1,6 +1,9 @@
 import {
+  KPIItem,
   EvidenceItem,
   SkillItem,
+  ArchitectureNode,
+  SignalItem,
   ExperienceItem,
   CertificationItem,
   ProjectItem,
@@ -20,8 +23,14 @@ import imgMongoRelational from "../images/from-relational-model-sql-to-mongodb-s
 import imgGenericTrophy from "../images/generic-trophy.svg";
 import imgAwsAcademy from "../images/aws-academy-graduate-cloud-foundations-training-bad.png";
 import imgClaudeCodeInAction from "../images/claude.svg";
-import imgMongoPythonCertification from "../images/MONGOcertification.svg";
+import imgMongoPythonPath from "../images/MONGOcertification.svg";
 import imgAwsSolutionsArchitect from "../images/saa-badge-resized.15f666ec150fa01aed6d1aa00cce4860a862759b.png";
+
+export const kpiItems: KPIItem[] = [];
+
+export const architectureNodes: ArchitectureNode[] = [];
+
+export const signalItems: SignalItem[] = [];
 
 export const evidenceItems: EvidenceItem[] = [];
 
@@ -84,6 +93,14 @@ export const experienceItems: ExperienceItem[] = [
 ];
 
 export const projectItems: ProjectItem[] = [
+  {
+    id: "the_wave_hackathon_2026",
+    titleKey: "projects.items.the_wave_hackathon_2026.title",
+    descriptionKey: "projects.items.the_wave_hackathon_2026.description",
+    tags: ["UNIVERSIDAD"],
+    skills: ["Hackathon", "Rapid Prototyping", "Validation"],
+    repoUrl: "https://github.com/dlopez-uni/the_wave",
+  },
   {
     id: "microsystems_programming",
     titleKey: "projects.items.microsystems_programming.title",
@@ -209,12 +226,12 @@ export const certificationItems: CertificationItem[] = [
     imageSrc: imgTransactSql,
     credentialUrl: "https://learn.microsoft.com/api/achievements/share/es-es/Carmoran/VTWX86JM?sharingId=FC7223DAAE79B586",
   },
-  {
+    {
     id: "claude_code_in_action",
     titleKey: "certifications.items.claude_code_in_action.title",
     issuerKey: "certifications.items.claude_code_in_action.issuer",
     dateKey: "certifications.items.claude_code_in_action.date",
-    imageSrc: imgClaudeCodeInAction,
+      imageSrc: imgClaudeCodeInAction,
     credentialUrl: "https://verify.skilljar.com/c/2egzywwxpdnn",
   },
   {
@@ -239,7 +256,7 @@ export const certificationItems: CertificationItem[] = [
     titleKey: "certifications.items.mongodb_python_path.title",
     issuerKey: "certifications.items.mongodb_python_path.issuer",
     dateKey: "certifications.items.mongodb_python_path.date",
-    imageSrc: imgMongoPythonCertification,
+    imageSrc: imgMongoPythonPath,
     comingSoon: true,
     credentialUrl: "",
   },
